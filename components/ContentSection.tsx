@@ -12,7 +12,7 @@ export const ContentSection: React.FC = () => {
         </h2>
         <div className="space-y-5 text-[15px] sm:text-base text-[var(--text-muted)] leading-relaxed">
           <p>
-            Civitas connects businesses with independent service providers for commercial cleaning across the metro area.
+            Cavitas connects businesses with independent service providers for commercial cleaning across the metro area.
             We don’t push one-size-fits-all packages—we learn your layout, traffic patterns, and schedule, then match you
             with the right provider for the way your business actually runs.
           </p>

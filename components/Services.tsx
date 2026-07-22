@@ -174,18 +174,18 @@ export const Services: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="services" className="py-14 md:py-16 lg:py-20 bg-[var(--bg-alt)] border-b border-[var(--border)]">
-      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
-        <header className="text-center mb-10 md:mb-14 max-w-2xl mx-auto">
-          <h2 className="text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] font-bold text-secondary tracking-tight leading-tight mb-4">
-            How Civitas Can Help You
+    <section id="services" className="py-10 sm:py-14 md:py-16 lg:py-20 bg-[var(--bg-alt)] border-b border-[var(--border)]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="text-center mb-7 sm:mb-10 md:mb-14 max-w-2xl mx-auto">
+          <h2 className="text-[1.45rem] sm:text-[2rem] md:text-[2.25rem] font-bold text-secondary tracking-tight leading-tight mb-2.5 sm:mb-4">
+            How Cavitas Can Help You
           </h2>
-          <p className="text-[var(--text-muted)] text-[15px] sm:text-base leading-relaxed">
+          <p className="text-[var(--text-muted)] text-[13px] sm:text-base leading-relaxed">
             We connect your business with independent providers for office cleaning, janitorial programs, and floor care—matched to your facility and schedule.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-5 lg:gap-6">
           {serviceGroups.map((group) => (
             <article key={group.title} className="relative group service-card">
               <div
@@ -198,17 +198,17 @@ export const Services: React.FC = () => {
                     'radial-gradient(circle 2.65rem at calc(100% - 0.15rem) calc(100% - 0.15rem), transparent 2.6rem, #000 2.65rem)',
                 }}
               >
-                <div className="p-3 pb-0">
-                  <div className="aspect-[16/10] overflow-hidden rounded-xl bg-[#141414] transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+                <div className="p-2.5 sm:p-3 pb-0">
+                  <div className="aspect-[16/9] sm:aspect-[16/10] overflow-hidden rounded-lg sm:rounded-xl bg-[#141414] transition-transform duration-700 ease-out group-hover:scale-[1.04]">
                     <group.Art />
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col px-5 pt-5 pb-10 min-h-[14rem]">
-                  <h3 className="font-bold text-[1.05rem] text-[var(--text)] tracking-tight mb-2.5">
+                <div className="flex flex-1 flex-col px-4 sm:px-5 pt-4 sm:pt-5 pb-9 sm:pb-10 min-h-0 sm:min-h-[14rem]">
+                  <h3 className="font-bold text-[1rem] sm:text-[1.05rem] text-[var(--text)] tracking-tight mb-1.5 sm:mb-2.5">
                     {group.title}
                   </h3>
-                  <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-6 flex-1">
+                  <p className="text-[13px] sm:text-sm text-[var(--text-muted)] leading-relaxed mb-4 sm:mb-6 flex-1 line-clamp-4 sm:line-clamp-none">
                     {group.description}
                   </p>
                   <button
@@ -225,10 +225,10 @@ export const Services: React.FC = () => {
               <button
                 type="button"
                 onClick={() => navigate(group.path)}
-                className="absolute bottom-0 right-0 z-10 flex h-[3.35rem] w-[3.35rem] items-center justify-center rounded-full bg-secondary text-[#f5f5f5] shadow-md transition-all duration-400 ease-out hover:bg-secondary-700 group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(220,38,38,0.35)]"
+                className="absolute bottom-0 right-0 z-10 flex h-[2.85rem] w-[2.85rem] sm:h-[3.35rem] sm:w-[3.35rem] items-center justify-center rounded-full bg-secondary text-[#f5f5f5] shadow-md transition-all duration-400 ease-out hover:bg-secondary-700 group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(220,38,38,0.35)]"
                 aria-label={`Learn more about ${group.title}`}
               >
-                <group.Icon className="h-[1.35rem] w-[1.35rem] transition-transform duration-500 group-hover:rotate-6" />
+                <group.Icon className="h-5 w-5 sm:h-[1.35rem] sm:w-[1.35rem] transition-transform duration-500 group-hover:rotate-6" />
               </button>
             </article>
           ))}

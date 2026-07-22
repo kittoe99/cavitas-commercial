@@ -1,4 +1,5 @@
 import React from 'react';
+import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
   return (
@@ -6,14 +7,13 @@ export const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-12 md:py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="w-9 h-9 rounded-lg bg-secondary text-[#f5f5f5] flex items-center justify-center font-extrabold text-sm" aria-hidden>C</span>
-              <span className="font-extrabold text-[var(--text)] text-lg tracking-tight">Civitas</span>
+            <div className="mb-4">
+              <Logo />
             </div>
             <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-4 max-w-xs">
               We connect businesses with independent service providers for commercial cleaning and janitorial work across the metro area.
             </p>
-            <a href="tel:55501234567" className="text-secondary font-bold text-sm hover:text-secondary-400">(555) 0123-4567</a>
+            <a href="tel:8336931311" className="text-secondary font-bold text-sm hover:text-secondary-400">(833) 693-1311</a>
           </div>
 
           <div>
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
       <div className="border-t border-[var(--border)] bg-[var(--bg-alt)]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-[#7a7a7a] text-xs">
-            &copy; {new Date().getFullYear()} Civitas Commercial Cleaning. All rights reserved.
+            &copy; {new Date().getFullYear()} Cavitas Commercial Cleaning. All rights reserved.
           </p>
           <div className="flex gap-5 text-xs">
             <a href="#" className="text-[#7a7a7a] hover:text-[var(--text)] transition-colors">Privacy</a>

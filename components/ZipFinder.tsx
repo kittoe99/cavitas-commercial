@@ -62,8 +62,8 @@ export const ZipFinder: React.FC = () => {
 
               <p className="text-sm font-bold text-[#d4d4d4]">
                 Call us at{' '}
-                <a href="tel:55501234567" className="text-secondary hover:underline">
-                  (555) 0123-4567
+                <a href="tel:8336931311" className="text-secondary hover:underline">
+                  (833) 693-1311
                 </a>
               </p>
             </div>

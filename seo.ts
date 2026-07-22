@@ -1,10 +1,10 @@
 /** Canonical production origin — keep in sync with the Vercel custom domain. */
 export const SITE_URL = 'https://www.cavitascommercialcleaning.com';
-export const SITE_NAME = 'Civitas Commercial Cleaning';
+export const SITE_NAME = 'Cavitas Commercial Cleaning';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/cavitas-commercial-cleaners.png`;
 export const SITE_EMAIL = 'contact@cavitascommercialcleaning.com';
-export const SITE_PHONE = '+1-555-0123-4567';
-export const SITE_PHONE_DISPLAY = '(555) 0123-4567';
+export const SITE_PHONE = '+18336931311';
+export const SITE_PHONE_DISPLAY = '(833) 693-1311';
 
 export type PageSeo = {
   title: string;
@@ -16,29 +16,29 @@ export type PageSeo = {
 
 export const HOME_SEO: PageSeo = {
   path: '/',
-  title: 'Civitas Commercial Cleaning | Office & Janitorial Services',
+  title: 'Cavitas Commercial Cleaning | Office & Janitorial Services',
   description:
-    'Commercial cleaning providers, matched to your business. Civitas connects companies with independent pros for office cleaning, janitorial services, and floor care across the metro area.',
+    'Commercial cleaning providers, matched to your business. Cavitas connects companies with independent pros for office cleaning, janitorial services, and floor care across the metro area.',
 };
 
 export const SERVICE_SEO: Record<string, PageSeo> = {
   '/services/office-cleaning': {
     path: '/services/office-cleaning',
-    title: 'Office Cleaning Services | Civitas Commercial Cleaning',
+    title: 'Office Cleaning Services | Cavitas Commercial Cleaning',
     description:
-      'Match your workplace with independent office cleaning providers. Desks, restrooms, floors, and common areas—scheduled around your hours through Civitas.',
+      'Match your workplace with independent office cleaning providers. Desks, restrooms, floors, and common areas—scheduled around your hours through Cavitas.',
   },
   '/services/janitorial': {
     path: '/services/janitorial',
-    title: 'Janitorial Services | Civitas Commercial Cleaning',
+    title: 'Janitorial Services | Cavitas Commercial Cleaning',
     description:
-      'Match your facility with independent janitorial providers for recurring coverage, supply support, and after-hours cleaning—coordinated through Civitas.',
+      'Match your facility with independent janitorial providers for recurring coverage, supply support, and after-hours cleaning—coordinated through Cavitas.',
   },
   '/services/floor-care': {
     path: '/services/floor-care',
-    title: 'Commercial Floor Care | Civitas Commercial Cleaning',
+    title: 'Commercial Floor Care | Cavitas Commercial Cleaning',
     description:
-      'Match your property with independent floor-care specialists for strip, wax, buff, and carpet extraction. Protect high-traffic commercial surfaces with Civitas.',
+      'Match your property with independent floor-care specialists for strip, wax, buff, and carpet extraction. Protect high-traffic commercial surfaces with Cavitas.',
   },
 };
 

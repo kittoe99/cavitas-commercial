@@ -83,7 +83,7 @@ export const PromiseSection: React.FC = () => {
               Done right, or we make it right.
             </h2>
             <p className="text-[var(--text-muted)] text-[15px] sm:text-base leading-relaxed mb-6 max-w-md">
-              If something isn’t up to standard, tell us by the next business day and we’ll work with your provider to make it right—at no extra cost. That’s the Civitas guarantee.
+              If something isn’t up to standard, tell us by the next business day and we’ll work with your provider to make it right—at no extra cost. That’s the Cavitas guarantee.
             </p>
             <ul className="space-y-3 mb-8">
               {['Vetted independent providers', 'Insured pros for peace of mind', 'Matched to your facility—not one-size-fits-all'].map((item) => (

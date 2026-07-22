@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { PromiseSection } from './components/PromiseSection';
 import { Services } from './components/Services';
+import { Industries } from './components/Industries';
 import { ContentSection } from './components/ContentSection';
 import { ZipFinder } from './components/ZipFinder';
 import { Footer } from './components/Footer';
@@ -26,6 +27,7 @@ function HomePage() {
       <Hero />
       <PromiseSection />
       <Services />
+      <Industries />
       <ContentSection />
       <ZipFinder />
     </>

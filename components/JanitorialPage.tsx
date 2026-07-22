@@ -34,49 +34,49 @@ const ArtJanitorial = () => (
 export const JanitorialPage: React.FC = () => (
   <ServicePage
     title="Janitorial Services"
-    description="Full-service janitorial programs through independent providers built around your facility. From nightly cleaning to supply support, we help match you with pros who keep your building ready."
-    detailsTitle="A complete program—not just a checklist."
+    description="Match your facility with independent janitorial providers for recurring coverage, supply support, and after-hours cleaning—coordinated through Cavitas."
+    detailsTitle="A full janitorial program—matched to your building."
     Art={ArtJanitorial}
     features={[
       { title: 'Evening & Off-Hours', desc: 'Cleaning happens after business hours so there’s zero disruption to your operations.' },
-      { title: 'Scheduled Consistency', desc: 'A reliable cadence with familiar providers—efficiency that builds over time in your space.' },
-      { title: 'Supply Management', desc: 'Providers can track consumables like paper, soap, and liners so you don’t run out mid-week.' },
-      { title: 'Green Options', desc: 'Eco-friendly products are available on request—safe for people and the environment.' },
-      { title: 'Dedicated Providers', desc: 'We aim to match you with consistent independent pros who learn your facility.' },
-      { title: 'Quality Follow-Up', desc: 'If standards slip, Civitas helps coordinate a make-it-right visit quickly.' },
+      { title: 'Reliable Cadence', desc: 'A consistent schedule with providers who learn your space over time.' },
+      { title: 'Supply Support', desc: 'Providers can track consumables like paper, soap, and liners so you don’t run short.' },
+      { title: 'Green Options', desc: 'Eco-friendly products are available on request when you need them.' },
+      { title: 'Provider Match', desc: 'Cavitas connects you with independent pros suited to your facility type and size.' },
+      { title: 'Quality Follow-Up', desc: 'If standards slip, we help coordinate a make-it-right visit quickly.' },
     ]}
     checklist={[
       'Consistent provider match for your account',
       'Custom scope tailored to your facility type',
-      'Evening, overnight, or weekend service',
-      'Supplies, equipment, and consumables support',
+      'Evening, overnight, or weekend service options',
+      'Supplies and consumables support',
       'Trash, recycling, and waste handling',
       'Vacuuming, mopping, and hard-surface care',
       'Restroom cleaning and supply restocking',
-      'High-touch disinfection throughout',
+      'High-touch surface attention throughout',
       'Ongoing quality check-ins as needed',
-      'Next-business-day callback on missed items',
+      'Next-business-day follow-up on missed items',
     ]}
     faqs={[
       {
         q: 'What’s the difference between office cleaning and janitorial?',
-        a: 'Office cleaning is typically a set task list each visit. Janitorial is a fuller program—supplies, scheduling, quality follow-up, and special projects—coordinated through Civitas with independent providers.',
+        a: 'Office cleaning is typically a set task list each visit. Janitorial is a fuller program—supplies, scheduling, quality follow-up, and special projects—coordinated through Cavitas with independent providers.',
+      },
+      {
+        q: 'How does Cavitas match providers?',
+        a: 'We learn your facility, hours, and priorities, then connect you with an independent provider that fits—so you’re not stuck with a one-size-fits-all package.',
       },
       {
         q: 'Can providers work with our security requirements?',
-        a: 'Yes. We help coordinate access, keys, and alarm protocols with your matched provider. Pros can carry photo ID and be added to your approved vendor list.',
+        a: 'Yes. We help coordinate access, keys, and building protocols with your matched provider.',
       },
       {
-        q: 'How do you handle special requests?',
-        a: 'Reach out to Civitas and we’ll coordinate with your provider. Post-event cleanup or extra visits before a meeting can usually be scheduled quickly.',
+        q: 'Do you offer day porter support?',
+        a: 'Yes. We can connect you with providers who offer day porter coverage for spot cleaning, restrooms, lobby upkeep, and on-demand needs.',
       },
       {
-        q: 'Do you offer day porter services?',
-        a: 'Yes. We can connect you with providers who offer day porter coverage for spot cleaning, restrooms, lobby upkeep, and on-demand needs during business hours.',
-      },
-      {
-        q: 'Are providers insured and bonded?',
-        a: 'We connect businesses with independent providers who meet insurance expectations. Certificates of insurance can be requested for your facility.',
+        q: 'What if something isn’t done right?',
+        a: 'Tell Cavitas by the next business day—we coordinate 24-hour resolution with your provider.',
       },
     ]}
   />

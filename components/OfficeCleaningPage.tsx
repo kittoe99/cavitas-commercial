@@ -38,16 +38,16 @@ const ArtOffice = () => (
 export const OfficeCleaningPage: React.FC = () => (
   <ServicePage
     title="Office Cleaning"
-    description="Daily, weekly, or custom office cleaning through independent providers matched to your workplace. Keep workstations, common areas, and restrooms spotless so your team can focus on work."
-    detailsTitle="Everything your workplace needs to stay polished."
+    description="Match your workplace with independent office cleaning providers. Desks, restrooms, common areas, and breakrooms—scheduled around your hours through Cavitas."
+    detailsTitle="Office cleaning providers, matched to your space."
     Art={ArtOffice}
     features={[
-      { title: 'Workstation Sanitizing', desc: 'Desks, keyboards, phones, and high-touch surfaces are cleaned and disinfected to reduce everyday germ spread.' },
-      { title: 'Trash & Recycling', desc: 'Bins are emptied, liners replaced, and recyclables handled according to your facility’s program.' },
-      { title: 'Floor Care', desc: 'Carpets are vacuumed and hard floors are damp-mopped, with spot treatment as needed.' },
-      { title: 'Restroom Sanitation', desc: 'Fixtures, sinks, mirrors, and counters are cleaned and disinfected. Soap and paper goods are restocked.' },
-      { title: 'Glass & Surfaces', desc: 'Interior glass, partitions, and common-area surfaces are polished to a streak-free finish.' },
-      { title: 'Detail Touch-Ups', desc: 'Switches, handles, baseboards, and vents get regular attention for a thoroughly clean environment.' },
+      { title: 'Workstation Care', desc: 'Desks, keyboards, phones, and high-touch surfaces cleaned so your team can stay focused.' },
+      { title: 'Trash & Recycling', desc: 'Bins emptied, liners replaced, and recyclables handled per your facility’s program.' },
+      { title: 'Floor Attention', desc: 'Carpets vacuumed and hard floors damp-mopped, with spot treatment as needed.' },
+      { title: 'Restroom Upkeep', desc: 'Fixtures, sinks, mirrors, and counters cleaned. Soap and paper goods restocked.' },
+      { title: 'Glass & Surfaces', desc: 'Interior glass, partitions, and common-area surfaces polished to a streak-free finish.' },
+      { title: 'Detail Touch-Ups', desc: 'Switches, handles, baseboards, and vents get regular attention for a polished workplace.' },
     ]}
     checklist={[
       'Empty trash and recycling; replace liners',
@@ -55,7 +55,7 @@ export const OfficeCleaningPage: React.FC = () => (
       'Wipe door handles, light switches, and high-touch areas',
       'Vacuum carpets and floor mats',
       'Damp-mop hard surface flooring',
-      'Clean and disinfect restroom fixtures and counters',
+      'Clean restroom fixtures and counters',
       'Restock soap, paper towels, and toilet paper',
       'Clean interior glass partitions and entry glass',
       'Wipe breakroom counters and appliances',
@@ -63,24 +63,24 @@ export const OfficeCleaningPage: React.FC = () => (
     ]}
     faqs={[
       {
-        q: 'How often should my office be cleaned?',
-        a: 'Most offices do well with daily or 3x/week service for high-traffic areas and restrooms. We’ll help match you with a provider and cadence based on size, headcount, and foot traffic.',
+        q: 'How does Cavitas office cleaning work?',
+        a: 'You tell us about your workplace and schedule. We match you with an independent provider suited to your space, then coordinate scope and follow-up.',
       },
       {
-        q: 'Do providers bring equipment and supplies?',
-        a: 'Yes. Independent providers typically arrive with commercial vacuums, microfiber, and EPA-registered solutions. Specific product preferences can often be accommodated.',
+        q: 'How often should my office be cleaned?',
+        a: 'Most offices do well with daily or 3x/week service for high-traffic areas and restrooms. We’ll help match cadence to size, headcount, and foot traffic.',
       },
       {
         q: 'What hours can cleaning happen?',
-        a: 'Providers offer after-hours, early morning, and weekend scheduling to minimize disruption. Evening service commonly runs 6:00 PM – 1:00 AM.',
+        a: 'Providers commonly offer after-hours, early morning, and weekend scheduling so work isn’t disrupted.',
       },
       {
-        q: 'Are providers background checked?',
-        a: 'Civitas connects you with vetted independent providers. Background checks, training, and insurance expectations are part of how we match businesses with pros.',
+        q: 'What if something isn’t up to standard?',
+        a: 'Tell us by the next business day—we coordinate 24-hour resolution with your provider to make it right.',
       },
       {
-        q: 'What if something gets missed?',
-        a: 'Tell us by the next business day and we’ll coordinate with your provider to make it right at no extra cost.',
+        q: 'Who actually does the cleaning?',
+        a: 'Independent service providers matched through Cavitas—vetted for quality and fit to your facility.',
       },
     ]}
   />

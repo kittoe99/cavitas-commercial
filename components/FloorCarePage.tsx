@@ -39,16 +39,16 @@ const ArtFloor = () => (
 export const FloorCarePage: React.FC = () => (
   <ServicePage
     title="Floor Care"
-    description="Strip, wax, buff, and deep carpet cleaning through independent floor-care specialists. Protect high-traffic surfaces so lobbies and workspaces stay sharp longer."
-    detailsTitle="Complete floor care for every surface."
+    description="Match your property with independent floor-care specialists for strip, wax, buff, and carpet extraction—coordinated through Cavitas."
+    detailsTitle="Floor care specialists, matched to your surfaces."
     Art={ArtFloor}
     features={[
-      { title: 'Strip & Wax', desc: 'Old finish is removed and durable coats of wax are applied for a renewed, long-lasting shine.' },
+      { title: 'Strip & Wax', desc: 'Old finish removed and durable coats applied for a renewed, long-lasting shine.' },
       { title: 'Burnishing & Buffing', desc: 'High-speed burnishing restores gloss and clears scuffs between full refinishing cycles.' },
-      { title: 'Carpet Extraction', desc: 'Hot-water extraction lifts dirt, allergens, and stains—extending carpet life.' },
+      { title: 'Carpet Extraction', desc: 'Hot-water extraction lifts dirt and stains—helping carpets look better longer.' },
       { title: 'Tile & Grout', desc: 'Rotary scrubbing restores tile and brings grout closer to its original color.' },
       { title: 'Hardwood Care', desc: 'Gentle cleaning and polishing for hardwood, engineered wood, and laminate.' },
-      { title: 'Preventive Maintenance', desc: 'Scheduled programs track floor condition and recommend the right cadence.' },
+      { title: 'Preventive Plans', desc: 'Scheduled programs recommend the right cadence for high-traffic commercial floors.' },
     ]}
     checklist={[
       'Strip and wax for VCT, vinyl, and linoleum',
@@ -60,12 +60,16 @@ export const FloorCarePage: React.FC = () => (
       'Concrete scrubbing and sealing where needed',
       'Pre- and post-treatment for high-traffic zones',
       'Floor condition assessment and care schedule',
-      'Low-VOC product options for all floor types',
+      'Product options matched to your surface type',
     ]}
     faqs={[
       {
+        q: 'How does Cavitas floor care work?',
+        a: 'We learn your floor types and traffic patterns, then match you with an independent specialist who can handle the right services for your property.',
+      },
+      {
         q: 'How often should floors be stripped and waxed?',
-        a: 'Most commercial VCT needs stripping every 6–12 months. High-traffic lobbies and halls may need it more often—we help assess and match you with the right schedule.',
+        a: 'Most commercial VCT needs stripping every 6–12 months. High-traffic lobbies and halls may need it more often—we help assess and match the right schedule.',
       },
       {
         q: 'Will floor work disrupt our business?',
@@ -76,8 +80,8 @@ export const FloorCarePage: React.FC = () => (
         a: 'Buffing is lower-speed cleaning and light shine. Burnishing uses high speed for a deeper gloss. Providers match the method to your floor type.',
       },
       {
-        q: 'Can you handle large facilities?',
-        a: 'Yes. We connect you with independent providers who have capacity from single offices to multi-floor campuses, retail, and warehouses.',
+        q: 'What if results aren’t right?',
+        a: 'Tell Cavitas by the next business day—we coordinate 24-hour resolution with your provider.',
       },
     ]}
   />

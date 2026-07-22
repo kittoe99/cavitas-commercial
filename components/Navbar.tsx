@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Logo } from './Logo';
 
 const serviceItems = [
   { name: 'Office Cleaning', path: '/services/office-cleaning' },
@@ -64,14 +65,8 @@ export const Navbar: React.FC = () => {
     <>
       <header ref={headerRef} className="fixed top-0 left-0 right-0 z-[60] bg-[var(--bg)]/85 backdrop-blur-md border-b border-[var(--border)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-[4.5rem] flex items-center justify-between gap-4">
-          <button type="button" onClick={goHome} className="shrink-0 flex items-center gap-2.5">
-            <span className="w-9 h-9 rounded-lg bg-secondary text-[#f5f5f5] flex items-center justify-center font-extrabold text-sm tracking-tight">
-              C
-            </span>
-            <span className="font-extrabold text-[var(--text)] text-lg tracking-tight">
-              Civitas
-              <span className="font-medium text-[var(--text-muted)] hidden sm:inline"> Cleaning</span>
-            </span>
+          <button type="button" onClick={goHome} className="shrink-0" aria-label="Cavitas home">
+            <Logo />
           </button>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -113,8 +108,8 @@ export const Navbar: React.FC = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:55501234567" className="text-sm font-bold text-secondary hover:text-secondary-400 transition-colors whitespace-nowrap">
-              (555) 0123-4567
+            <a href="tel:8336931311" className="text-sm font-bold text-secondary hover:text-secondary-400 transition-colors whitespace-nowrap">
+              (833) 693-1311
             </a>
             <a
               href="#contact"
@@ -147,7 +142,9 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="flex items-center justify-between px-4 h-16 border-b border-[var(--border)]">
-          <button type="button" onClick={goHome} className="font-extrabold text-[var(--text)] text-lg">Civitas</button>
+          <button type="button" onClick={goHome} className="inline-flex items-center" aria-label="Cavitas home">
+            <Logo showWordmark wordmarkClassName="!text-base" markClassName="w-8 h-8" />
+          </button>
           <button type="button" onClick={() => setIsMenuOpen(false)} className="w-10 h-10 flex items-center justify-center text-[var(--text)]" aria-label="Close menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
@@ -183,8 +180,8 @@ export const Navbar: React.FC = () => {
           >
             Free Quote
           </a>
-          <a href="tel:55501234567" className="flex items-center justify-center text-base font-bold text-secondary">
-            (555) 0123-4567
+          <a href="tel:8336931311" className="flex items-center justify-center text-base font-bold text-secondary">
+            (833) 693-1311
           </a>
         </div>
       </div>
