@@ -1,6 +1,10 @@
 import React from 'react';
-import type { QuoteAnswers } from '../quoteTypes';
-import { Field, inputClass } from '../QuoteField';
+import {
+  BUDGET_OPTIONS,
+  CONTACT_PREF_OPTIONS,
+  type QuoteAnswers,
+} from '../quoteTypes';
+import { ErrorText, Field, OptionCard, Section, inputClass } from '../QuoteField';
 
 type Props = {
   answers: QuoteAnswers;
@@ -9,7 +13,7 @@ type Props = {
 };
 
 export const ContactStep: React.FC<Props> = ({ answers, onChange, errors }) => (
-  <div className="space-y-5">
+  <div className="space-y-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <Field label="Your name" htmlFor="quote-name">
         <input
@@ -21,7 +25,7 @@ export const ContactStep: React.FC<Props> = ({ answers, onChange, errors }) => (
           placeholder="Jordan Lee"
           autoComplete="name"
         />
-        {errors.name && <p className="mt-2 text-sm text-secondary">{errors.name}</p>}
+        <ErrorText>{errors.name}</ErrorText>
       </Field>
       <Field label="Business name" htmlFor="quote-business">
         <input
@@ -33,7 +37,7 @@ export const ContactStep: React.FC<Props> = ({ answers, onChange, errors }) => (
           placeholder="Acme Co."
           autoComplete="organization"
         />
-        {errors.businessName && <p className="mt-2 text-sm text-secondary">{errors.businessName}</p>}
+        <ErrorText>{errors.businessName}</ErrorText>
       </Field>
     </div>
 
@@ -48,7 +52,7 @@ export const ContactStep: React.FC<Props> = ({ answers, onChange, errors }) => (
           placeholder="you@company.com"
           autoComplete="email"
         />
-        {errors.email && <p className="mt-2 text-sm text-secondary">{errors.email}</p>}
+        <ErrorText>{errors.email}</ErrorText>
       </Field>
       <Field label="Phone" htmlFor="quote-phone">
         <input
@@ -60,8 +64,35 @@ export const ContactStep: React.FC<Props> = ({ answers, onChange, errors }) => (
           placeholder="(833) 693-1311"
           autoComplete="tel"
         />
-        {errors.phone && <p className="mt-2 text-sm text-secondary">{errors.phone}</p>}
+        <ErrorText>{errors.phone}</ErrorText>
       </Field>
     </div>
+
+    <Section title="Preferred contact method">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {CONTACT_PREF_OPTIONS.map((opt) => (
+          <OptionCard
+            key={opt.id}
+            selected={answers.contactPref === opt.id}
+            title={opt.title}
+            onClick={() => onChange({ contactPref: opt.id })}
+          />
+        ))}
+      </div>
+      <ErrorText>{errors.contactPref}</ErrorText>
+    </Section>
+
+    <Section title="Monthly budget range" hint="Optional — helps us match the right providers.">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {BUDGET_OPTIONS.map((opt) => (
+          <OptionCard
+            key={opt.id}
+            selected={answers.budget === opt.id}
+            title={opt.title}
+            onClick={() => onChange({ budget: opt.id })}
+          />
+        ))}
+      </div>
+    </Section>
   </div>
 );

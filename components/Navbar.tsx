@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
+import { useDetectedCity } from '../hooks/useDetectedCity';
 
 const SITE_EMAIL = 'contact@cavitascommercialcleaning.com';
 const SITE_PHONE = '(833) 693-1311';
@@ -11,6 +12,27 @@ const serviceItems = [
   { name: 'Janitorial Services', path: '/services/janitorial' },
   { name: 'Floor Care', path: '/services/floor-care' },
 ];
+
+const LocationPinIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
+  </svg>
+);
+
+const CityLocation: React.FC<{
+  city: string;
+  className?: string;
+  textClassName?: string;
+}> = ({
+  city,
+  className = '',
+  textClassName = 'text-[13px] sm:text-sm font-semibold text-[#1a1a1a]',
+}) => (
+  <span className={`inline-flex items-center gap-1.5 min-w-0 ${className}`}>
+    <LocationPinIcon className="w-4 h-4 text-secondary shrink-0" />
+    <span className={`truncate ${textClassName}`}>{city}</span>
+  </span>
+);
 
 const ContactChip: React.FC<{
   href?: string;
@@ -51,6 +73,7 @@ export const Navbar: React.FC = () => {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const detectedCity = useDetectedCity();
 
   useEffect(() => {
     const header = headerRef.current;
@@ -104,12 +127,22 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header ref={headerRef} className="fixed top-0 left-0 right-0 z-[60]">
+        {/* Desktop location utility bar */}
+        <div className="hidden lg:block bg-[#f3f3f3] border-b border-[#e5e5e5]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-center">
+            <CityLocation city={detectedCity} textClassName="text-[13px] font-semibold text-[#1a1a1a]" />
+          </div>
+        </div>
+
         {/* Top tier — logo + contact chips */}
         <div className="bg-white border-b border-[#e8e8e8]">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-[4.25rem] sm:h-[4.75rem] flex items-center justify-between gap-4">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-[4.25rem] sm:h-[4.75rem] flex items-center justify-between gap-3 sm:gap-4">
             <button type="button" onClick={goHome} className="shrink-0" aria-label="Cavitas home">
               <Logo variant="light" markClassName="w-10 h-10" wordmarkClassName="!text-[1.15rem]" />
             </button>
+
+            {/* Mobile: city between logo and actions */}
+            <CityLocation city={detectedCity} className="lg:hidden flex-1 justify-center min-w-0" />
 
             <div className="hidden lg:flex items-center gap-0">
               <ContactChip
@@ -148,7 +181,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile: email + phone icon buttons */}
-            <div className="flex lg:hidden items-center gap-2.5">
+            <div className="flex lg:hidden items-center gap-2.5 shrink-0">
               <a
                 href={`mailto:${SITE_EMAIL}`}
                 className="flex h-10 w-10 items-center justify-center rounded-md bg-[#111] text-white shadow-md"
