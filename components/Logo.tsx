@@ -5,6 +5,8 @@ type LogoProps = {
   markClassName?: string;
   showWordmark?: boolean;
   wordmarkClassName?: string;
+  /** `light` = dark wordmark for white backgrounds */
+  variant?: 'dark' | 'light';
 };
 
 /** Cavitas mark — open C with a clean sparkle accent */
@@ -37,13 +39,25 @@ export const Logo: React.FC<LogoProps> = ({
   markClassName = 'w-9 h-9',
   showWordmark = true,
   wordmarkClassName = '',
+  variant = 'dark',
 }) => (
   <span className={`inline-flex items-center gap-2.5 ${className}`}>
     <LogoMark className={markClassName} />
     {showWordmark && (
-      <span className={`font-extrabold text-[var(--text)] text-lg tracking-tight leading-none ${wordmarkClassName}`}>
+      <span
+        className={`font-extrabold text-lg tracking-tight leading-none ${
+          variant === 'light' ? 'text-[#111]' : 'text-[var(--text)]'
+        } ${wordmarkClassName}`}
+      >
         Cavitas
-        <span className="font-medium text-[var(--text-muted)] hidden sm:inline"> Cleaning</span>
+        <span
+          className={`font-medium hidden sm:inline ${
+            variant === 'light' ? 'text-[#555]' : 'text-[var(--text-muted)]'
+          }`}
+        >
+          {' '}
+          Cleaning
+        </span>
       </span>
     )}
   </span>
