@@ -65,6 +65,10 @@ export const ZipFinder: React.FC = () => {
                 <a href="tel:8336931311" className="text-secondary hover:underline">
                   (833) 693-1311
                 </a>
+                {' '}or{' '}
+                <a href="/quote" className="text-secondary hover:underline">
+                  get a detailed quote
+                </a>
               </p>
             </div>
           </div>

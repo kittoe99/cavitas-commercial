@@ -49,7 +49,7 @@ export const HeroTrustBar: React.FC = () => {
             {SITE_PHONE_DISPLAY}
           </a>
           {' '}or{' '}
-          <a href="#contact" className="font-bold text-secondary hover:text-secondary-400 whitespace-nowrap">
+          <a href="/quote" className="font-bold text-secondary hover:text-secondary-400 whitespace-nowrap">
             Request a quote
           </a>
           .

@@ -190,10 +190,11 @@ export const Navbar: React.FC = () => {
               )}
             </button>
             <a
-              href="#contact"
+              href="/quote"
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick('#contact');
+                setIsMenuOpen(false);
+                navigate('/quote');
               }}
               className="inline-flex items-center gap-2 rounded-md bg-white px-3.5 sm:px-4 py-2.5 text-[13px] font-bold text-secondary shadow-sm whitespace-nowrap"
             >
@@ -263,10 +264,10 @@ export const Navbar: React.FC = () => {
             </nav>
 
             <a
-              href="#contact"
+              href="/quote"
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick('#contact');
+                navigate('/quote');
               }}
               className="inline-flex items-center gap-2 my-2.5 rounded-md bg-white px-4 py-2.5 text-[13px] font-bold text-secondary hover:bg-[#f5f5f5] transition-colors whitespace-nowrap"
             >

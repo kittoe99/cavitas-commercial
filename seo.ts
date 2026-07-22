@@ -42,6 +42,13 @@ export const SERVICE_SEO: Record<string, PageSeo> = {
   },
 };
 
+export const QUOTE_SEO: PageSeo = {
+  path: '/quote',
+  title: 'Get a Commercial Cleaning Quote | Cavitas',
+  description:
+    'Request an online commercial cleaning estimate. Tell Cavitas about your space, schedule, and service needs—we’ll match you with independent providers and confirm pricing.',
+};
+
 export function absoluteUrl(path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${SITE_URL}${normalized === '/' ? '' : normalized}`;

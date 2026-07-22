@@ -92,7 +92,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               </p>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5">
                 <a
-                  href="#contact"
+                  href="/quote"
                   className="inline-flex items-center gap-2 rounded-full bg-secondary px-5 sm:px-7 py-2.5 sm:py-3.5 text-[13px] sm:text-[15px] font-semibold text-[#f5f5f5] hover:bg-secondary-700 transition-colors"
                 >
                   Get a free quote

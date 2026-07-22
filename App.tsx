@@ -12,6 +12,7 @@ import { SeoManager } from './components/SeoManager';
 import { OfficeCleaningPage } from './components/OfficeCleaningPage';
 import { JanitorialPage } from './components/JanitorialPage';
 import { FloorCarePage } from './components/FloorCarePage';
+import { QuotePage } from './components/QuotePage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -45,6 +46,7 @@ function App() {
         <main className="pt-[var(--site-header-height)]">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/quote" element={<QuotePage />} />
             <Route path="/services/office-cleaning" element={<OfficeCleaningPage />} />
             <Route path="/services/janitorial" element={<JanitorialPage />} />
             <Route path="/services/floor-care" element={<FloorCarePage />} />

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import {
   DEFAULT_OG_IMAGE,
   HOME_SEO,
+  QUOTE_SEO,
   SERVICE_SEO,
   SITE_NAME,
   absoluteUrl,
@@ -71,6 +72,11 @@ export function SeoManager() {
   useEffect(() => {
     if (pathname === '/') {
       applySeo(HOME_SEO, [organizationSchema()]);
+      return;
+    }
+
+    if (pathname === '/quote') {
+      applySeo(QUOTE_SEO);
       return;
     }
 
