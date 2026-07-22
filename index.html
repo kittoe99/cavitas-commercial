@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Civitas Commercial Cleaning | Professional Janitorial Services</title>
+    <meta name="title" content="Civitas Commercial Cleaning | Professional Janitorial Services" />
+    <meta name="description" content="Civitas Commercial Cleaning provides professional commercial cleaning and janitorial services for offices, medical facilities, retail spaces, and more. Reliable, insured, and customized cleaning plans." />
+    <meta name="keywords" content="commercial cleaning, janitorial services, office cleaning, medical facility cleaning, retail cleaning, floor care, post-construction cleaning, commercial disinfection" />
+    <meta name="author" content="Civitas Commercial Cleaning" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: '#000000',
+                50:  '#f5f5f5',
+                100: '#e5e5e5',
+                400: '#525252',
+                500: '#000000',
+                600: '#171717',
+                700: '#0a0a0a',
+              },
+              secondary: {
+                DEFAULT: '#DC2626',
+                50:  '#FEF2F2',
+                100: '#FEE2E2',
+                200: '#FECACA',
+                400: '#F87171',
+                500: '#EF4444',
+                600: '#DC2626',
+                700: '#B91C1C',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              display: ['Inter', 'system-ui', 'sans-serif'],
+              serif: ['Fraunces', 'Georgia', 'serif'],
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg: #121212;
+        --bg-alt: #161616;
+        --surface: #1c1c1c;
+        --surface-2: #242424;
+        --text: #e8e8e8;
+        --text-muted: #aeb0b2;
+        --border: rgba(255, 255, 255, 0.08);
+        --site-header-height: 64px;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: -0.01em;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Inter', system-ui, sans-serif;
+        letter-spacing: -0.02em;
+      }
+
+      .font-serif {
+        font-family: 'Fraunces', Georgia, serif !important;
+      }
+
+      button {
+        border-radius: 0.75rem;
+      }
+
+      .hero-section .hero-mobile-cta button {
+        border-radius: 0;
+      }
+
+      input:not([type="radio"]):not([type="checkbox"]),
+      select,
+      textarea {
+        border: 1px solid #333;
+        background-color: var(--surface);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        color: var(--text);
+      }
+
+      input:not([type="radio"]):not([type="checkbox"])::placeholder,
+      textarea::placeholder {
+        color: #7a7a7a;
+      }
+
+      input:not([type="radio"]):not([type="checkbox"]):hover,
+      select:hover,
+      textarea:hover {
+        border-color: #4a4a4a;
+      }
+
+      input:not([type="radio"]):not([type="checkbox"]):focus,
+      select:focus,
+      textarea:focus {
+        border-color: #DC2626;
+        background-color: var(--surface);
+        box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+        outline: none;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--site-header-height, 124px);
+      }
+
+      @media (min-width: 768px) {
+        :root {
+          --site-header-height: 72px;
+        }
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3a3a3a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4f4f4f;
+      }
+
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+      }
+      .animate-slide-up {
+        animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .animate-scale-in {
+        animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+      .delay-400 { animation-delay: 400ms; }
+      .delay-500 { animation-delay: 500ms; }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      .mobile-menu-enter {
+        animation: slideDown 0.3s ease-out forwards;
+      }
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Hero art — quiet living motion */
+      @keyframes glossSweep {
+        0%, 100% { stroke-dashoffset: 420; opacity: 0.35; }
+        45% { opacity: 1; }
+        70% { stroke-dashoffset: 0; opacity: 0.85; }
+      }
+      @keyframes sparklePulse {
+        0%, 100% { opacity: 0.35; transform: scale(0.85); }
+        50% { opacity: 1; transform: scale(1.08); }
+      }
+      @keyframes panePulse {
+        0%, 100% { fill-opacity: 0.4; }
+        50% { fill-opacity: 0.7; }
+      }
+      @keyframes glassShine {
+        0%, 100% { opacity: 0.04; }
+        50% { opacity: 0.09; }
+      }
+      @keyframes ringSpin {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes glowBreath {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1; }
+      }
+      @keyframes checkDraw {
+        from { stroke-dashoffset: 160; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes badgeFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      @keyframes cleanerSway {
+        0%, 100% { transform: translateX(0) rotate(0deg); }
+        50% { transform: translateX(2px) rotate(0.6deg); }
+      }
+
+      .hero-gloss {
+        stroke-dasharray: 420;
+        stroke-dashoffset: 420;
+        animation: glossSweep 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      .hero-sparkle {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: sparklePulse 2.8s ease-in-out infinite;
+      }
+      .hero-sparkle-delay {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: sparklePulse 2.8s ease-in-out 0.9s infinite;
+      }
+      .hero-pane {
+        animation: panePulse 4s ease-in-out infinite;
+      }
+      .hero-pane-delay {
+        animation: panePulse 4s ease-in-out 1.2s infinite;
+      }
+      .hero-glass-shine {
+        animation: glassShine 4.5s ease-in-out infinite;
+      }
+      .hero-cleaner {
+        transform-box: fill-box;
+        transform-origin: center bottom;
+        animation: cleanerSway 5s ease-in-out infinite;
+      }
+
+      .promise-ring {
+        animation: ringSpin 28s linear infinite;
+      }
+      .promise-glow {
+        animation: glowBreath 4s ease-in-out infinite;
+      }
+      .promise-check {
+        stroke-dasharray: 160;
+        stroke-dashoffset: 0;
+        animation: checkDraw 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+      }
+      .promise-badge {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: badgeFloat 3.5s ease-in-out infinite;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-gloss,
+        .hero-sparkle,
+        .hero-sparkle-delay,
+        .hero-pane,
+        .hero-pane-delay,
+        .hero-glass-shine,
+        .hero-cleaner,
+        .promise-ring,
+        .promise-glow,
+        .promise-check,
+        .promise-badge {
+          animation: none !important;
+        }
+        .promise-check {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
