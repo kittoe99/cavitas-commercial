@@ -65,7 +65,7 @@ const PromiseArt = () => (
 
     <g className="promise-badge">
       <rect x="318" y="292" width="88" height="36" rx="18" fill="#1a1a1a" stroke="#DC2626" strokeWidth="1.5" />
-      <text x="362" y="315" textAnchor="middle" fill="#DC2626" fontSize="12" fontFamily="Inter, system-ui, sans-serif" fontWeight="700">
+      <text x="362" y="315" textAnchor="middle" fill="#DC2626" fontSize="12" fontFamily="'Plus Jakarta Sans', system-ui, sans-serif" fontWeight="700">
         GUARANTEED
       </text>
     </g>
@@ -79,7 +79,7 @@ export const PromiseSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.1em] text-secondary mb-3">Our Promise</p>
-            <h2 className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] font-semibold text-[var(--text)] tracking-tight leading-tight mb-5">
+            <h2 className="font-serif text-[1.85rem] sm:text-[2.15rem] md:text-[2.4rem] text-[var(--text)] tracking-tight leading-tight mb-5">
               Done right, or we make it right.
             </h2>
             <p className="text-[var(--text-muted)] text-[15px] sm:text-base leading-relaxed mb-6 max-w-md">

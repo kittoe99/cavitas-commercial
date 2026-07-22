@@ -152,7 +152,7 @@ export const Footer: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 sm:gap-6">
             {locations.map((loc) => (
               <div key={loc.city}>
-                <h3 className="text-base font-bold text-white mb-2">{loc.city}</h3>
+                <h3 className="font-sans text-base font-bold text-white mb-2">{loc.city}</h3>
                 <div className="h-px w-full bg-white/25 mb-4" />
                 <a
                   href={`tel:${PHONE_TEL}`}

@@ -177,7 +177,7 @@ export const Services: React.FC = () => {
     <section id="services" className="py-10 sm:py-14 md:py-16 lg:py-20 bg-[var(--bg-alt)] border-b border-[var(--border)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-7 sm:mb-10 md:mb-14 max-w-2xl mx-auto">
-          <h2 className="text-[1.45rem] sm:text-[2rem] md:text-[2.25rem] font-bold text-secondary tracking-tight leading-tight mb-2.5 sm:mb-4">
+          <h2 className="font-serif text-[1.55rem] sm:text-[2.15rem] md:text-[2.4rem] text-secondary tracking-tight leading-tight mb-2.5 sm:mb-4">
             How Cavitas Can Help You
           </h2>
           <p className="text-[var(--text-muted)] text-[13px] sm:text-base leading-relaxed">
@@ -205,7 +205,7 @@ export const Services: React.FC = () => {
                 </div>
 
                 <div className="flex flex-1 flex-col px-4 sm:px-5 pt-4 sm:pt-5 pb-9 sm:pb-10 min-h-0 sm:min-h-[14rem]">
-                  <h3 className="font-bold text-[1rem] sm:text-[1.05rem] text-[var(--text)] tracking-tight mb-1.5 sm:mb-2.5">
+                  <h3 className="font-sans font-bold text-[1rem] sm:text-[1.05rem] text-[var(--text)] tracking-tight mb-1.5 sm:mb-2.5">
                     {group.title}
                   </h3>
                   <p className="text-[13px] sm:text-sm text-[var(--text-muted)] leading-relaxed mb-4 sm:mb-6 flex-1 line-clamp-4 sm:line-clamp-none">

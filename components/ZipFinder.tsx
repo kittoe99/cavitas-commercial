@@ -27,7 +27,7 @@ export const ZipFinder: React.FC = () => {
             </div>
 
             <div>
-              <h2 className="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-bold text-[var(--text)] tracking-tight leading-tight mb-2">
+              <h2 className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] text-[var(--text)] tracking-tight leading-tight mb-2">
                 Find Providers Near You
               </h2>
               <p className="text-[var(--text-muted)] text-[15px] mb-5">

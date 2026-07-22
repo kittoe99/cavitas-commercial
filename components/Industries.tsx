@@ -58,7 +58,7 @@ export const Industries: React.FC = () => {
     <section id="industries" className="py-10 sm:py-14 md:py-16 lg:py-20 bg-[var(--bg)] border-b border-[var(--border)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-6 sm:mb-10 md:mb-12">
-          <h2 className="text-[1.45rem] sm:text-[2rem] md:text-[2.25rem] font-bold text-[var(--text)] tracking-tight leading-tight">
+          <h2 className="font-serif text-[1.55rem] sm:text-[2.15rem] md:text-[2.4rem] text-[var(--text)] tracking-tight leading-tight">
             Industries
           </h2>
           <p className="mt-2 sm:mt-3 text-[var(--text-muted)] text-[13px] sm:text-[15px] md:text-base max-w-xl leading-relaxed">
@@ -71,7 +71,7 @@ export const Industries: React.FC = () => {
             <article key={item.name} className="group flex flex-col items-center">
               <div className="relative z-10 w-[90%] sm:w-[88%] mx-auto">
                 <div className="rounded border sm:rounded-md border-secondary/70 bg-[var(--bg)] px-1.5 sm:px-3 py-1 sm:py-2 text-center">
-                  <h3 className="text-[10px] sm:text-[13px] md:text-sm font-bold text-[var(--text)] tracking-tight leading-snug">
+                  <h3 className="font-sans text-[10px] sm:text-[13px] md:text-sm font-bold text-[var(--text)] tracking-tight leading-snug">
                     {item.name}
                   </h3>
                 </div>

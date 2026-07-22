@@ -7,7 +7,7 @@ export const ContentSection: React.FC = () => {
         <p className="text-sm font-bold uppercase tracking-[0.1em] text-secondary mb-3">
           Commercial Cleaning
         </p>
-        <h2 className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] font-semibold text-[var(--text)] tracking-tight leading-tight mb-6">
+        <h2 className="font-serif text-[1.85rem] sm:text-[2.15rem] md:text-[2.4rem] text-[var(--text)] tracking-tight leading-tight mb-6">
           Built for workplaces that need to stay clean.
         </h2>
         <div className="space-y-5 text-[15px] sm:text-base text-[var(--text-muted)] leading-relaxed">

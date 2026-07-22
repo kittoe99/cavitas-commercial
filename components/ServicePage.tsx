@@ -84,7 +84,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center gap-6 md:gap-10 lg:gap-14">
             <div className="animate-slide-up">
               <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-secondary mb-2.5 sm:mb-3">Services</p>
-              <h1 className="font-serif text-[1.65rem] sm:text-[2.35rem] md:text-[2.75rem] font-semibold text-[var(--text)] tracking-tight leading-[1.12] mb-3 sm:mb-4">
+              <h1 className="font-serif text-[1.75rem] sm:text-[2.5rem] md:text-[2.9rem] text-[var(--text)] tracking-tight leading-[1.1] mb-3 sm:mb-4">
                 {title}
               </h1>
               <p className="text-[13px] sm:text-base md:text-lg text-[var(--text-muted)] leading-relaxed mb-5 sm:mb-7 max-w-md">
@@ -128,7 +128,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="max-w-2xl mb-7 sm:mb-10 md:mb-14">
             <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-secondary mb-2 sm:mb-3">How Cavitas helps</p>
-            <h2 className="font-serif text-[1.4rem] sm:text-[1.85rem] md:text-[2.1rem] font-semibold text-[var(--text)] tracking-tight leading-tight">
+            <h2 className="font-serif text-[1.5rem] sm:text-[2rem] md:text-[2.25rem] text-[var(--text)] tracking-tight leading-tight">
               {detailsTitle}
             </h2>
           </header>
@@ -136,7 +136,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-6 sm:gap-y-10">
             {features.map((f) => (
               <div key={f.title}>
-                <h3 className="font-bold text-[14px] sm:text-[15px] text-[var(--text)] mb-1.5 sm:mb-2 tracking-tight">{f.title}</h3>
+                <h3 className="font-sans font-bold text-[14px] sm:text-[15px] text-[var(--text)] mb-1.5 sm:mb-2 tracking-tight">{f.title}</h3>
                 <p className="text-[13px] sm:text-sm text-[var(--text-muted)] leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -150,7 +150,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-secondary mb-2 sm:mb-3">What’s included</p>
-              <h2 className="font-serif text-[1.35rem] sm:text-[1.5rem] md:text-[1.75rem] font-semibold text-[var(--text)] tracking-tight mb-5 sm:mb-8 leading-tight">
+              <h2 className="font-serif text-[1.45rem] sm:text-[1.65rem] md:text-[1.9rem] text-[var(--text)] tracking-tight mb-5 sm:mb-8 leading-tight">
                 A clear scope on every visit.
               </h2>
               <ul className="space-y-2.5 sm:space-y-3.5">
@@ -165,13 +165,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({
 
             <div>
               <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-secondary mb-2 sm:mb-3">FAQs</p>
-              <h2 className="font-serif text-[1.35rem] sm:text-[1.5rem] md:text-[1.75rem] font-semibold text-[var(--text)] tracking-tight mb-5 sm:mb-8 leading-tight">
+              <h2 className="font-serif text-[1.45rem] sm:text-[1.65rem] md:text-[1.9rem] text-[var(--text)] tracking-tight mb-5 sm:mb-8 leading-tight">
                 Common questions.
               </h2>
               <div className="space-y-5 sm:space-y-6">
                 {faqs.map((faq) => (
                   <div key={faq.q}>
-                    <h3 className="font-semibold text-[13px] sm:text-sm text-[var(--text)] mb-1 sm:mb-1.5">{faq.q}</h3>
+                    <h3 className="font-sans font-semibold text-[13px] sm:text-sm text-[var(--text)] mb-1 sm:mb-1.5">{faq.q}</h3>
                     <p className="text-[13px] sm:text-sm text-[var(--text-muted)] leading-relaxed">{faq.a}</p>
                   </div>
                 ))}
