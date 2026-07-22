@@ -3,7 +3,8 @@ import React from 'react';
 export const ContentSection: React.FC = () => {
   return (
     <section className="bg-[var(--bg)] border-b border-[var(--border)]">
-      <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 py-14 md:py-16 lg:py-20">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-14 md:py-16 lg:py-20">
+        <div className="max-w-3xl text-left">
         <p className="text-sm font-bold uppercase tracking-[0.1em] text-secondary mb-3">
           Commercial Cleaning
         </p>
@@ -20,6 +21,7 @@ export const ContentSection: React.FC = () => {
             Whether you need recurring office cleaning, a full janitorial program, or specialized floor care,
             you get reliable coordination, clear communication, and results you can count on—visit after visit.
           </p>
+        </div>
         </div>
       </div>
     </section>

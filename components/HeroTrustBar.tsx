@@ -50,7 +50,7 @@ export const HeroTrustBar: React.FC = () => {
           </a>
           {' '}or{' '}
           <a href="/quote" className="font-bold text-secondary hover:text-secondary-400 whitespace-nowrap">
-            Request a quote
+            View Pricing
           </a>
           .
         </p>
@@ -60,7 +60,7 @@ export const HeroTrustBar: React.FC = () => {
         {badges.map((b) => (
           <div
             key={b.key}
-            className="flex flex-col sm:flex-row items-center sm:items-center gap-1 sm:gap-2.5 rounded-lg sm:rounded-xl border border-[var(--border)] bg-[var(--surface)] px-1.5 sm:px-3 py-2 sm:py-2.5 text-center sm:text-left min-w-0"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2.5 rounded-lg sm:rounded-xl border border-[var(--border)] bg-[var(--surface)] px-1.5 sm:px-3 py-2 sm:py-2.5 text-left min-w-0"
           >
             {b.icon}
             <div className="min-w-0">

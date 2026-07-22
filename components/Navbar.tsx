@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
 import { useDetectedCity } from '../hooks/useDetectedCity';
 
-const SITE_EMAIL = 'contact@cavitascommercialcleaning.com';
 const SITE_PHONE = '(833) 693-1311';
 const SITE_PHONE_TEL = '8336931311';
 
@@ -69,6 +68,7 @@ export const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isContactPage = location.pathname === '/contact';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -122,7 +122,7 @@ export const Navbar: React.FC = () => {
   };
 
   const navLinkClass =
-    'relative inline-flex items-center gap-1.5 rounded-none px-3 py-3.5 text-[13px] font-semibold text-white hover:text-white/90 transition-colors';
+    'relative inline-flex items-center gap-1.5 rounded-none px-3.5 py-3.5 text-[15px] font-semibold text-white hover:text-white/90 transition-colors';
 
   return (
     <>
@@ -137,26 +137,14 @@ export const Navbar: React.FC = () => {
         {/* Top tier — logo + contact chips */}
         <div className="bg-white border-b border-[#e8e8e8]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-[4.25rem] sm:h-[4.75rem] flex items-center justify-between gap-3 sm:gap-4">
-            <button type="button" onClick={goHome} className="shrink-0" aria-label="Cavitas home">
-              <Logo variant="light" markClassName="w-10 h-10" wordmarkClassName="!text-[1.15rem]" />
+            <button type="button" onClick={goHome} className="shrink-0" aria-label="Cavitas Commercial Cleaning home">
+              <Logo variant="light" size="compact" />
             </button>
 
-            {/* Mobile: city between logo and actions */}
-            <CityLocation city={detectedCity} className="lg:hidden flex-1 justify-center min-w-0" />
+            {/* Mobile: city next to logo, left-aligned */}
+            <CityLocation city={detectedCity} className="lg:hidden flex-1 justify-start min-w-0" />
 
             <div className="hidden lg:flex items-center gap-0">
-              <ContactChip
-                href={`mailto:${SITE_EMAIL}`}
-                label="Email:"
-                value={SITE_EMAIL}
-                icon={
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                    <path d="M3 7l9 6 9-6" />
-                  </svg>
-                }
-              />
-              <span className="mx-5 h-10 w-px bg-[#ddd]" aria-hidden />
               <ContactChip
                 href={`tel:${SITE_PHONE_TEL}`}
                 label="Phone:"
@@ -180,18 +168,8 @@ export const Navbar: React.FC = () => {
               />
             </div>
 
-            {/* Mobile: email + phone icon buttons */}
+            {/* Mobile: phone */}
             <div className="flex lg:hidden items-center gap-2.5 shrink-0">
-              <a
-                href={`mailto:${SITE_EMAIL}`}
-                className="flex h-10 w-10 items-center justify-center rounded-md bg-[#111] text-white shadow-md"
-                aria-label="Email Cavitas"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="M3 7l9 6 9-6" />
-                </svg>
-              </a>
               <a
                 href={`tel:${SITE_PHONE_TEL}`}
                 className="flex h-10 w-10 items-center justify-center rounded-md bg-[#111] text-white shadow-md"
@@ -231,7 +209,7 @@ export const Navbar: React.FC = () => {
               }}
               className="inline-flex items-center gap-2 rounded-md bg-white px-3.5 sm:px-4 py-2.5 text-[13px] font-bold text-secondary shadow-sm whitespace-nowrap"
             >
-              Request A Quote
+              View Pricing
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
@@ -291,7 +269,11 @@ export const Navbar: React.FC = () => {
               <button type="button" onClick={() => handleLinkClick('#industries')} className={navLinkClass}>
                 Industries
               </button>
-              <button type="button" onClick={() => handleLinkClick('#contact')} className={navLinkClass}>
+              <button
+                type="button"
+                onClick={() => handleNavigate('/contact')}
+                className={`${navLinkClass} ${isContactPage ? 'after:absolute after:left-3 after:right-3 after:bottom-2 after:h-[3px] after:rounded-full after:bg-[#222]' : ''}`}
+              >
                 Contact Us
               </button>
             </nav>
@@ -304,7 +286,7 @@ export const Navbar: React.FC = () => {
               }}
               className="inline-flex items-center gap-2 my-2.5 rounded-md bg-white px-4 py-2.5 text-[13px] font-bold text-secondary hover:bg-[#f5f5f5] transition-colors whitespace-nowrap"
             >
-              Request A Quote
+              View Pricing
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
@@ -371,7 +353,7 @@ export const Navbar: React.FC = () => {
             </button>
             <button
               type="button"
-              onClick={() => handleLinkClick('#contact')}
+              onClick={() => handleNavigate('/contact')}
               className="w-full rounded-none text-left px-4 py-3.5 text-[15px] font-semibold text-white"
             >
               Contact Us

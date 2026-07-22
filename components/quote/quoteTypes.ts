@@ -2,7 +2,6 @@
 
 export type ServiceType = 'office' | 'janitorial' | 'floor-care';
 export type Frequency = 'daily' | '3x-week' | 'weekly' | 'biweekly' | 'monthly' | 'one-time';
-export type SqftBand = 'under-2k' | '2k-5k' | '5k-10k' | '10k-25k' | '25k-plus';
 export type OccupantBand = '1-10' | '11-25' | '26-50' | '51-100' | '100-plus';
 export type TimeWindow = 'business-hours' | 'after-hours' | 'flexible';
 export type StartTimeframe = 'asap' | '2-weeks' | '1-month' | 'exploring';
@@ -19,7 +18,8 @@ export type QuoteAnswers = {
   frequency: Frequency | '';
   areas: string[];
   addons: string[];
-  sqftBand: SqftBand | '';
+  /** Exact cleanable square footage */
+  sqft: string;
   occupants: OccupantBand | '';
   restrooms: string;
   floors: string;
@@ -47,7 +47,7 @@ export const EMPTY_QUOTE: QuoteAnswers = {
   frequency: '',
   areas: [],
   addons: [],
-  sqftBand: '',
+  sqft: '',
   occupants: '',
   restrooms: '',
   floors: '',
@@ -102,14 +102,6 @@ export const ADDON_OPTIONS: { id: string; title: string }[] = [
   { id: 'floor-specialty', title: 'Strip / wax / buff' },
   { id: 'disinfection', title: 'Enhanced disinfection' },
   { id: 'none', title: 'None right now' },
-];
-
-export const SQFT_OPTIONS: { id: SqftBand; title: string }[] = [
-  { id: 'under-2k', title: 'Under 2,000 sq ft' },
-  { id: '2k-5k', title: '2,000 – 5,000 sq ft' },
-  { id: '5k-10k', title: '5,000 – 10,000 sq ft' },
-  { id: '10k-25k', title: '10,000 – 25,000 sq ft' },
-  { id: '25k-plus', title: '25,000+ sq ft' },
 ];
 
 export const OCCUPANT_OPTIONS: { id: OccupantBand; title: string }[] = [
@@ -193,7 +185,7 @@ export const BUDGET_OPTIONS: { id: BudgetBand; title: string }[] = [
 
 export const QUOTE_STEPS = [
   { id: 'service', label: 'Service', title: 'What do you need cleaned?', subtitle: 'Service type, frequency, and which areas matter most.' },
-  { id: 'property', label: 'Property', title: 'Tell us about the space', subtitle: 'Size, occupancy, and where providers will work.' },
+  { id: 'property', label: 'Property', title: 'Tell us about the space', subtitle: 'Exact square footage, occupancy, and where providers will work.' },
   { id: 'schedule', label: 'Schedule', title: 'When and how should we clean?', subtitle: 'Preferred days, timing, access, and supplies.' },
   { id: 'contact', label: 'Contact', title: 'How can we reach you?', subtitle: 'We’ll follow up to confirm details and pricing.' },
   { id: 'review', label: 'Review', title: 'Review your estimate', subtitle: 'Confirm everything looks right, then submit.' },
@@ -209,8 +201,10 @@ export function labelForFrequency(id: Frequency | ''): string {
   return FREQUENCY_OPTIONS.find((o) => o.id === id)?.title ?? '—';
 }
 
-export function labelForSqft(id: SqftBand | ''): string {
-  return SQFT_OPTIONS.find((o) => o.id === id)?.title ?? '—';
+export function labelForSqft(sqft: string): string {
+  const n = Number(String(sqft).replace(/,/g, ''));
+  if (!Number.isFinite(n) || n <= 0) return '—';
+  return `${n.toLocaleString('en-US')} sq ft`;
 }
 
 export function labelForOccupants(id: OccupantBand | ''): string {

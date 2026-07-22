@@ -68,9 +68,9 @@ export const Industries: React.FC = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-6 sm:gap-x-5 sm:gap-y-10">
           {industries.map((item) => (
-            <article key={item.name} className="group flex flex-col items-center">
-              <div className="relative z-10 w-[90%] sm:w-[88%] mx-auto">
-                <div className="rounded border sm:rounded-md border-secondary/70 bg-[var(--bg)] px-1.5 sm:px-3 py-1 sm:py-2 text-center">
+            <article key={item.name} className="group flex flex-col items-stretch">
+              <div className="relative z-10 w-[90%] sm:w-[88%]">
+                <div className="rounded border sm:rounded-md border-secondary/70 bg-[var(--bg)] px-1.5 sm:px-3 py-1 sm:py-2 text-left">
                   <h3 className="font-sans text-[10px] sm:text-[13px] md:text-sm font-bold text-[var(--text)] tracking-tight leading-snug">
                     {item.name}
                   </h3>

@@ -176,7 +176,7 @@ export const Services: React.FC = () => {
   return (
     <section id="services" className="py-10 sm:py-14 md:py-16 lg:py-20 bg-[var(--bg-alt)] border-b border-[var(--border)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-7 sm:mb-10 md:mb-14 max-w-2xl mx-auto">
+        <header className="mb-7 sm:mb-10 md:mb-14 max-w-2xl text-left">
           <h2 className="font-serif text-[1.55rem] sm:text-[2.15rem] md:text-[2.4rem] text-secondary tracking-tight leading-tight mb-2.5 sm:mb-4">
             How Cavitas Can Help You
           </h2>

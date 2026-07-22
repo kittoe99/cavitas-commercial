@@ -67,7 +67,7 @@ export const ZipFinder: React.FC = () => {
                 </a>
                 {' '}or{' '}
                 <a href="/quote" className="text-secondary hover:underline">
-                  get a detailed quote
+                  View Pricing
                 </a>
               </p>
             </div>

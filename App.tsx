@@ -13,6 +13,7 @@ import { OfficeCleaningPage } from './components/OfficeCleaningPage';
 import { JanitorialPage } from './components/JanitorialPage';
 import { FloorCarePage } from './components/FloorCarePage';
 import { QuotePage } from './components/QuotePage';
+import { ContactPage } from './components/ContactPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -47,6 +48,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/quote" element={<QuotePage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/services/office-cleaning" element={<OfficeCleaningPage />} />
             <Route path="/services/janitorial" element={<JanitorialPage />} />
             <Route path="/services/floor-care" element={<FloorCarePage />} />

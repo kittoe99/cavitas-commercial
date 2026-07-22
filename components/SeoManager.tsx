@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
+  CONTACT_SEO,
   DEFAULT_OG_IMAGE,
   HOME_SEO,
   QUOTE_SEO,
@@ -77,6 +78,11 @@ export function SeoManager() {
 
     if (pathname === '/quote') {
       applySeo(QUOTE_SEO);
+      return;
+    }
+
+    if (pathname === '/contact') {
+      applySeo(CONTACT_SEO);
       return;
     }
 

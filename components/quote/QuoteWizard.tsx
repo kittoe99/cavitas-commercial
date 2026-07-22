@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SITE_EMAIL, SITE_PHONE_DISPLAY } from '../../seo';
+import { SITE_PHONE_DISPLAY } from '../../seo';
 import {
   EMPTY_QUOTE,
   QUOTE_STEPS,
@@ -27,13 +27,18 @@ function validateStep(step: QuoteStepId, answers: QuoteAnswers): Errors {
   }
 
   if (step === 'property') {
-    if (!answers.sqftBand) errors.sqftBand = 'Select square footage.';
-    if (!answers.occupants) errors.occupants = 'Select typical occupancy.';
-    if (answers.restrooms === '' || Number.isNaN(Number(answers.restrooms))) {
-      errors.restrooms = 'Enter number of restrooms.';
+    const sqft = Number(String(answers.sqft).replace(/,/g, ''));
+    if (!answers.sqft.trim() || !Number.isFinite(sqft) || sqft < 100) {
+      errors.sqft = 'Enter exact square footage (at least 100).';
+    } else if (sqft > 500000) {
+      errors.sqft = 'Enter a square footage under 500,000.';
     }
-    if (!answers.floors || Number(answers.floors) < 1) {
-      errors.floors = 'Enter number of floors.';
+    if (!answers.occupants) errors.occupants = 'Select typical occupancy.';
+    if (!answers.restrooms) {
+      errors.restrooms = 'Select number of restrooms.';
+    }
+    if (!answers.floors) {
+      errors.floors = 'Select number of floors.';
     }
     if (!answers.address.trim()) errors.address = 'Enter the street address.';
     if (!answers.city.trim()) errors.city = 'Enter your city.';
@@ -115,7 +120,7 @@ export const QuoteWizard: React.FC = () => {
         </h2>
         <p className="text-[var(--text-muted)] text-[15px] leading-relaxed max-w-xl mb-8">
           Your request is in. A Cavitas coordinator will review your details and confirm pricing with
-          matched providers. Prefer to talk now? Call or email us anytime.
+          matched providers. Prefer to talk now? Call us anytime.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
           <a
@@ -123,12 +128,6 @@ export const QuoteWizard: React.FC = () => {
             className="inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-[#f5f5f5] hover:bg-secondary-700 transition-colors"
           >
             Call {SITE_PHONE_DISPLAY}
-          </a>
-          <a
-            href={`mailto:${SITE_EMAIL}`}
-            className="inline-flex items-center justify-center px-2 py-2 text-sm font-bold text-secondary hover:text-secondary-400 transition-colors"
-          >
-            {SITE_EMAIL}
           </a>
         </div>
       </div>

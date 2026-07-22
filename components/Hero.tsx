@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
               href="/quote"
               className="inline-flex items-center justify-center rounded-full bg-secondary px-5 sm:px-7 py-2.5 sm:py-3.5 text-[13px] sm:text-[15px] font-semibold text-[#f5f5f5] hover:bg-secondary-700 transition-colors animate-fade-in-up delay-300"
             >
-              Get a quote
+              View Pricing
             </a>
 
             <HeroTrustBar />

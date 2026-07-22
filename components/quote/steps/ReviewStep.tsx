@@ -45,7 +45,7 @@ export const ReviewStep: React.FC<Props> = ({ answers }) => {
         <Row label="Frequency" value={labelForFrequency(answers.frequency)} />
         <Row label="Areas" value={labelForAreas(answers.areas)} />
         <Row label="Add-ons" value={labelForAddons(answers.addons.filter((a) => a !== 'none'))} />
-        <Row label="Size" value={labelForSqft(answers.sqftBand)} />
+        <Row label="Square footage" value={labelForSqft(answers.sqft)} />
         <Row label="Occupancy" value={labelForOccupants(answers.occupants)} />
         <Row label="Restrooms" value={answers.restrooms} />
         <Row label="Floors" value={answers.floors} />
@@ -74,7 +74,10 @@ export const ReviewStep: React.FC<Props> = ({ answers }) => {
               <span className="ml-2 font-sans text-base font-semibold text-[var(--text-muted)]">/ month</span>
             )}
           </p>
-          <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-md">{estimate.label}</p>
+          <p className="mt-2 text-[13px] font-semibold text-[var(--text)]">
+            {estimate.facilityLabel}: ${estimate.rateLow.toFixed(2)}–${estimate.rateHigh.toFixed(2)} per sq ft
+          </p>
+          <p className="mt-1.5 text-sm text-[var(--text-muted)] leading-relaxed max-w-lg">{estimate.label}</p>
         </div>
       )}
     </div>

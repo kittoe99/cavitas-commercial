@@ -1,8 +1,10 @@
 /** Free IP geolocation via GeoJS (https://www.geojs.io) — no API key. */
 
 export const DEFAULT_CITY_LABEL = 'Denver, CO';
+export const DEFAULT_STATE = 'CO';
+export const DEFAULT_CITY = 'Denver';
 
-const CACHE_KEY = 'cavitas_detected_city';
+const CACHE_KEY = 'cavitas_detected_location';
 const GEOJS_URL = 'https://get.geojs.io/v1/ip/geo.json';
 
 const US_STATE_ABBR: Record<string, string> = {
@@ -66,8 +68,20 @@ type GeoJsResponse = {
   country?: string;
 };
 
-function regionToAbbrev(region: string, countryCode?: string): string {
-  if (countryCode === 'US' || countryCode === 'USA') {
+export type DetectedLocation = {
+  city: string;
+  state: string;
+  label: string;
+};
+
+export const DEFAULT_LOCATION: DetectedLocation = {
+  city: DEFAULT_CITY,
+  state: DEFAULT_STATE,
+  label: DEFAULT_CITY_LABEL,
+};
+
+export function regionToAbbrev(region: string, countryCode?: string): string {
+  if (countryCode === 'US' || countryCode === 'USA' || !countryCode) {
     const abbr = US_STATE_ABBR[region.trim().toLowerCase()];
     if (abbr) return abbr;
   }
@@ -87,28 +101,27 @@ export function formatCityLabel(city: string, region?: string, countryCode?: str
   return cleanCity;
 }
 
-function readCache(): string | null {
+function readCache(): DetectedLocation | null {
   try {
     const raw = sessionStorage.getItem(CACHE_KEY);
     if (!raw) return null;
-    const parsed = JSON.parse(raw) as { label?: string; at?: number };
-    if (!parsed.label) return null;
-    // Cache for the browser session only (sessionStorage); still validate shape.
-    return parsed.label;
+    const parsed = JSON.parse(raw) as Partial<DetectedLocation> & { at?: number };
+    if (!parsed.city || !parsed.state || !parsed.label) return null;
+    return { city: parsed.city, state: parsed.state, label: parsed.label };
   } catch {
     return null;
   }
 }
 
-function writeCache(label: string) {
+function writeCache(loc: DetectedLocation) {
   try {
-    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ label, at: Date.now() }));
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ...loc, at: Date.now() }));
   } catch {
     /* ignore quota / private mode */
   }
 }
 
-export async function detectCityLabel(): Promise<string> {
+export async function detectLocation(): Promise<DetectedLocation> {
   const cached = readCache();
   if (cached) return cached;
 
@@ -117,10 +130,29 @@ export async function detectCityLabel(): Promise<string> {
     if (!res.ok) throw new Error(`GeoJS ${res.status}`);
     const data = (await res.json()) as GeoJsResponse;
     if (!data.city?.trim()) throw new Error('No city');
-    const label = formatCityLabel(data.city, data.region, data.country_code);
-    writeCache(label);
-    return label;
+
+    const isUs = !data.country_code || data.country_code === 'US' || data.country_code === 'USA';
+    const state = isUs && data.region
+      ? regionToAbbrev(data.region, data.country_code)
+      : DEFAULT_STATE;
+    const city = data.city.trim();
+    const label = isUs
+      ? formatCityLabel(city, data.region, data.country_code)
+      : DEFAULT_CITY_LABEL;
+
+    const loc: DetectedLocation = isUs
+      ? { city, state: state.length === 2 ? state : DEFAULT_STATE, label }
+      : DEFAULT_LOCATION;
+
+    writeCache(loc);
+    return loc;
   } catch {
-    return DEFAULT_CITY_LABEL;
+    return DEFAULT_LOCATION;
   }
+}
+
+/** @deprecated Prefer detectLocation(); kept for nav label callers. */
+export async function detectCityLabel(): Promise<string> {
+  const loc = await detectLocation();
+  return loc.label;
 }

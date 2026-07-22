@@ -1,31 +1,9 @@
 import React from 'react';
 import { Logo } from './Logo';
-import { SITE_EMAIL, SITE_PHONE_DISPLAY } from '../seo';
+import { useLocalMarkets } from '../hooks/useDetectedCity';
+import { SITE_PHONE_DISPLAY } from '../seo';
 
 const PHONE_TEL = '8336931311';
-
-const locations = [
-  {
-    city: 'Denver',
-    phone: SITE_PHONE_DISPLAY,
-    address: '3600 S Yosemite St #750, Denver, CO 80237',
-  },
-  {
-    city: 'Centennial',
-    phone: SITE_PHONE_DISPLAY,
-    address: '6909 S Holly Cir #200, Centennial, CO 80112',
-  },
-  {
-    city: 'San Diego',
-    phone: SITE_PHONE_DISPLAY,
-    address: '402 W Broadway #400, San Diego, CA 92101',
-  },
-  {
-    city: 'La Jolla',
-    phone: SITE_PHONE_DISPLAY,
-    address: '4225 Executive Square #600, La Jolla, CA 92037',
-  },
-];
 
 const policies = [
   { label: 'Privacy Policy', href: '#' },
@@ -33,13 +11,6 @@ const policies = [
   { label: 'Disclaimer', href: '#' },
   { label: 'Cookie Policy', href: '#' },
 ];
-
-const IconMail = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-    <rect x="3" y="5" width="18" height="14" rx="2" />
-    <path d="M3 7l9 6 9-6" />
-  </svg>
-);
 
 const IconPhone = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -87,26 +58,14 @@ const ResolutionBadge = () => (
 );
 
 export const Footer: React.FC = () => {
+  const locations = useLocalMarkets();
+
   return (
     <footer className="bg-[#0f0f0f] text-white">
       {/* Top contact bar */}
       <div className="border-b border-white/10 bg-[#161616]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-5 sm:py-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
-            <a
-              href={`mailto:${SITE_EMAIL}`}
-              className="flex items-center gap-3 min-w-0 hover:opacity-90 transition-opacity"
-            >
-              <span className="text-secondary shrink-0">
-                <IconMail />
-              </span>
-              <span className="min-w-0 leading-tight">
-                <span className="block text-[12px] font-semibold text-secondary">Email:</span>
-                <span className="block truncate text-[13px] sm:text-sm font-bold uppercase tracking-wide text-white">
-                  {SITE_EMAIL}
-                </span>
-              </span>
-            </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             <a
               href={`tel:${PHONE_TEL}`}
               className="flex items-center gap-3 hover:opacity-90 transition-opacity"
@@ -141,7 +100,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)] gap-10 lg:gap-12">
           <div>
             <div className="mb-5 inline-flex rounded-md bg-white px-3 py-2.5">
-              <Logo variant="light" markClassName="w-9 h-9" wordmarkClassName="!text-base" />
+              <Logo variant="light" />
             </div>
             <div className="flex flex-col gap-3 items-start">
               <SatisfactionBadge />
@@ -177,7 +136,7 @@ export const Footer: React.FC = () => {
         {/* Policy links */}
         <div className="relative mt-12 md:mt-16">
           <div className="absolute left-0 right-0 top-1/2 h-px bg-secondary" aria-hidden />
-          <div className="relative flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="relative flex flex-wrap items-center justify-start gap-3 sm:gap-4">
             {policies.map((p) => (
               <a
                 key={p.label}

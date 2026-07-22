@@ -2,7 +2,6 @@
 export const SITE_URL = 'https://www.cavitascommercialcleaning.com';
 export const SITE_NAME = 'Cavitas Commercial Cleaning';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/cavitas-commercial-cleaners.png`;
-export const SITE_EMAIL = 'contact@cavitascommercialcleaning.com';
 export const SITE_PHONE = '+18336931311';
 export const SITE_PHONE_DISPLAY = '(833) 693-1311';
 
@@ -49,6 +48,13 @@ export const QUOTE_SEO: PageSeo = {
     'Request an online commercial cleaning estimate. Tell Cavitas about your space, schedule, and service needs—we’ll match you with independent providers and confirm pricing.',
 };
 
+export const CONTACT_SEO: PageSeo = {
+  path: '/contact',
+  title: 'Contact Cavitas Commercial Cleaning',
+  description:
+    'Contact Cavitas Commercial Cleaning 24/7. Call (833) 693-1311 or send a message—we connect businesses with independent commercial cleaning providers.',
+};
+
 export function absoluteUrl(path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${SITE_URL}${normalized === '/' ? '' : normalized}`;
@@ -64,7 +70,6 @@ export function organizationSchema() {
     image: DEFAULT_OG_IMAGE,
     description: HOME_SEO.description,
     telephone: SITE_PHONE,
-    email: SITE_EMAIL,
     areaServed: {
       '@type': 'Place',
       name: 'Greater Metro Area',
