@@ -29,7 +29,7 @@ function validateStep(step: QuoteStepId, answers: QuoteAnswers): Errors {
   if (step === 'property') {
     const sqft = Number(String(answers.sqft).replace(/,/g, ''));
     if (!answers.sqft.trim() || !Number.isFinite(sqft) || sqft < 100) {
-      errors.sqft = 'Enter exact square footage (at least 100).';
+      errors.sqft = 'Select or enter square footage (at least 100).';
     } else if (sqft > 500000) {
       errors.sqft = 'Enter a square footage under 500,000.';
     }

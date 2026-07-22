@@ -48,7 +48,7 @@ export const ZipFinder: React.FC = () => {
                     value={zip}
                     onChange={(e) => setZip(e.target.value)}
                     placeholder="Enter Zip/Postal Code"
-                    className="w-full rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none border border-white/12 border-b-0 sm:border-b sm:border-r-0 bg-[var(--bg)] pl-10 pr-4 py-3.5 text-sm text-[var(--text)] outline-none focus:border-secondary"
+                    className="w-full rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none border border-[#c8c8c8] border-b-0 sm:border-b sm:border-r-0 bg-[#f0f0f0] pl-10 pr-4 py-3.5 text-sm text-[#1a1a1a] outline-none placeholder:text-[#6b6b6b] hover:bg-[#f5f5f5] focus:border-secondary focus:bg-[#fafafa]"
                     required
                   />
                 </label>

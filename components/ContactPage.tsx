@@ -6,7 +6,7 @@ import { SITE_PHONE_DISPLAY } from '../seo';
 const PHONE_TEL = '8336931311';
 
 const inputClass =
-  'w-full rounded-xl border border-white/12 bg-[var(--bg)] px-3.5 py-3 text-sm text-[var(--text)] outline-none transition-shadow placeholder:text-[#666]';
+  'w-full rounded-xl border border-[#c8c8c8] bg-[#f0f0f0] px-3.5 py-3 text-sm text-[#1a1a1a] outline-none transition-shadow placeholder:text-[#6b6b6b] hover:border-[#a8a8a8] hover:bg-[#f5f5f5] focus:border-secondary focus:bg-[#fafafa]';
 
 type FormState = {
   name: string;
