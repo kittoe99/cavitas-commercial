@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
               <span className="font-extrabold text-[var(--text)] text-lg tracking-tight">Civitas</span>
             </div>
             <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-4 max-w-xs">
-              Professional commercial cleaning and janitorial services for businesses across the metro area.
+              We connect businesses with independent service providers for commercial cleaning and janitorial work across the metro area.
             </p>
             <a href="tel:55501234567" className="text-secondary font-bold text-sm hover:text-secondary-400">(555) 0123-4567</a>
           </div>
@@ -38,8 +38,8 @@ export const Footer: React.FC = () => {
             <h4 className="font-bold text-[var(--text)] text-sm mb-4">Contact</h4>
             <ul className="space-y-2.5 text-sm text-[var(--text-muted)]">
               <li>
-                <a href="mailto:contact@civitascleaning.com" className="hover:text-[var(--text)] transition-colors">
-                  contact@civitascleaning.com
+                <a href="mailto:contact@cavitascommercialcleaning.com" className="hover:text-[var(--text)] transition-colors">
+                  contact@cavitascommercialcleaning.com
                 </a>
               </li>
               <li>Serving the Greater Metro Area</li>

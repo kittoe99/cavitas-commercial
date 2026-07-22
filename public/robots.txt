@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: https://www.cavitascommercialcleaning.com
+Sitemap: https://www.cavitascommercialcleaning.com/sitemap.xml

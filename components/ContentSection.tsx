@@ -12,14 +12,13 @@ export const ContentSection: React.FC = () => {
         </h2>
         <div className="space-y-5 text-[15px] sm:text-base text-[var(--text-muted)] leading-relaxed">
           <p>
-            Civitas partners with offices, medical facilities, and commercial properties across the metro area.
-            We don’t offer one-size-fits-all packages—we learn your layout, traffic patterns, and schedule, then
-            build a cleaning plan that fits the way your business actually runs.
+            Civitas connects businesses with independent service providers for commercial cleaning across the metro area.
+            We don’t push one-size-fits-all packages—we learn your layout, traffic patterns, and schedule, then match you
+            with the right provider for the way your business actually runs.
           </p>
           <p>
-            Our trained, uniformed teams arrive prepared with commercial-grade equipment and supplies.
-            Whether you need recurring janitorial coverage, detailed floor care, or a consistent office clean,
-            you get reliable service, clear communication, and results you can count on—visit after visit.
+            Whether you need recurring office cleaning, a full janitorial program, or specialized floor care,
+            you get reliable coordination, clear communication, and results you can count on—visit after visit.
           </p>
         </div>
       </div>

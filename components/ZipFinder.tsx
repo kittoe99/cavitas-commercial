@@ -28,10 +28,10 @@ export const ZipFinder: React.FC = () => {
 
             <div>
               <h2 className="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-bold text-[var(--text)] tracking-tight leading-tight mb-2">
-                Find Civitas Near You
+                Find Providers Near You
               </h2>
               <p className="text-[var(--text-muted)] text-[15px] mb-5">
-                Let us know how we can help you today.
+                Tell us where you are—we’ll connect you with independent cleaning pros in your area.
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-0 mb-4 max-w-lg">
@@ -56,7 +56,7 @@ export const ZipFinder: React.FC = () => {
                   type="submit"
                   className="shrink-0 rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none bg-secondary px-5 py-3.5 text-sm font-semibold text-[#f5f5f5] hover:bg-secondary-700 transition-colors"
                 >
-                  Find My Local Civitas
+                  Find Providers Near Me
                 </button>
               </form>
 

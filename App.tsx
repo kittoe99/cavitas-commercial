@@ -7,12 +7,10 @@ import { Services } from './components/Services';
 import { ContentSection } from './components/ContentSection';
 import { ZipFinder } from './components/ZipFinder';
 import { Footer } from './components/Footer';
+import { SeoManager } from './components/SeoManager';
 import { OfficeCleaningPage } from './components/OfficeCleaningPage';
 import { JanitorialPage } from './components/JanitorialPage';
 import { FloorCarePage } from './components/FloorCarePage';
-import { PostConstructionPage } from './components/PostConstructionPage';
-import { DisinfectionPage } from './components/DisinfectionPage';
-import { WindowWashingPage } from './components/WindowWashingPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,8 +35,9 @@ function HomePage() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#0a0a0a] text-neutral-100">
+      <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
         <ScrollToTop />
+        <SeoManager />
         <Navbar />
 
         <main className="pt-[var(--site-header-height)]">
@@ -47,9 +46,6 @@ function App() {
             <Route path="/services/office-cleaning" element={<OfficeCleaningPage />} />
             <Route path="/services/janitorial" element={<JanitorialPage />} />
             <Route path="/services/floor-care" element={<FloorCarePage />} />
-            <Route path="/services/post-construction" element={<PostConstructionPage />} />
-            <Route path="/services/disinfection" element={<DisinfectionPage />} />
-            <Route path="/services/window-washing" element={<WindowWashingPage />} />
           </Routes>
         </main>
 

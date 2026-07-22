@@ -147,7 +147,7 @@ const serviceGroups = [
   {
     title: 'Office Cleaning',
     description:
-      'Keep your workplace polished with scheduled office cleaning built around your hours and traffic. We handle desks, common areas, restrooms, and breakrooms so your team can focus on work—not the mess. Choose daily, weekly, or custom visits with the same reliable crew every time.',
+      'Keep your workplace polished with scheduled office cleaning built around your hours and traffic. Independent providers handle desks, common areas, restrooms, and breakrooms so your team can focus on work—not the mess. Choose daily, weekly, or custom visits matched to your needs.',
     path: '/services/office-cleaning',
     Art: ArtOffice,
     Icon: IconOffice,
@@ -155,7 +155,7 @@ const serviceGroups = [
   {
     title: 'Janitorial Services',
     description:
-      'Full-service commercial janitorial programs customized to your facility, schedule, and maintenance needs. From trash and restocking to detailed restroom care and after-hours cleaning, we cover the day-to-day work that keeps your building running smoothly year-round.',
+      'Full-service commercial janitorial programs customized to your facility, schedule, and maintenance needs. From trash and restocking to detailed restroom care and after-hours cleaning, we connect you with providers who cover the day-to-day work that keeps your building running smoothly.',
     path: '/services/janitorial',
     Art: ArtJanitorial,
     Icon: IconJanitorial,
@@ -163,7 +163,7 @@ const serviceGroups = [
   {
     title: 'Floor Care',
     description:
-      'Protect high-traffic floors with professional strip, wax, buff, and deep carpet cleaning. We restore hard surfaces and carpets so lobbies, corridors, and workspaces look sharp and last longer—ideal for offices, clinics, and commercial properties that need durable results.',
+      'Protect high-traffic floors with professional strip, wax, buff, and deep carpet cleaning. We match you with independent specialists who restore hard surfaces and carpets so lobbies, corridors, and workspaces look sharp and last longer.',
     path: '/services/floor-care',
     Art: ArtFloor,
     Icon: IconFloor,
@@ -181,7 +181,7 @@ export const Services: React.FC = () => {
             How Civitas Can Help You
           </h2>
           <p className="text-[var(--text-muted)] text-[15px] sm:text-base leading-relaxed">
-            We specialize in commercial cleaning—reliable crews, flexible schedules, and plans built around your facility.
+            We connect your business with independent providers for office cleaning, janitorial programs, and floor care—matched to your facility and schedule.
           </p>
         </header>
 

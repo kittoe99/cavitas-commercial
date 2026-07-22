@@ -83,10 +83,10 @@ export const PromiseSection: React.FC = () => {
               Done right, or we make it right.
             </h2>
             <p className="text-[var(--text-muted)] text-[15px] sm:text-base leading-relaxed mb-6 max-w-md">
-              If something isn’t up to standard, tell us by the next business day and we’ll return to fix it—at no extra cost. That’s the Civitas guarantee.
+              If something isn’t up to standard, tell us by the next business day and we’ll work with your provider to make it right—at no extra cost. That’s the Civitas guarantee.
             </p>
             <ul className="space-y-3 mb-8">
-              {['Trained & uniformed crews', 'Fully insured for peace of mind', 'Custom plans—no one-size-fits-all'].map((item) => (
+              {['Vetted independent providers', 'Insured pros for peace of mind', 'Matched to your facility—not one-size-fits-all'].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-sm font-medium text-[#d4d4d4]">
                   <svg className="w-5 h-5 shrink-0 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                   {item}
