@@ -4,9 +4,9 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
  * Public Supabase project (WPS-canvas). The anon key is safe in the browser —
  * table access is enforced by RLS. Env vars override these defaults when set.
  */
-const DEFAULT_SUPABASE_URL = 'https://mjgwoukwyqwoectxfwqv.supabase.co';
+const DEFAULT_SUPABASE_URL = 'https://eaktbubetifehgijevxd.supabase.co';
 const DEFAULT_SUPABASE_ANON_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qZ3dvdWt3eXF3b2VjdHhmd3F2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ3NjAzNjcsImV4cCI6MjA3MDMzNjM2N30.3ee-rHN_BYQKaZmLOTiyoVxU4fYLDnNnfToI8veH5F8';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVha3RidWJldGlmZWhnaWpldnhkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5OTc1MjAsImV4cCI6MjA5OTU3MzUyMH0.tthXx09QCb2uxgf_ieOAjNk3EzqjkGA_ljIa6O7fkok';
 
 const envUrl = (import.meta.env.VITE_SUPABASE_URL as string | undefined)?.trim();
 const envKey = (import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined)?.trim();
