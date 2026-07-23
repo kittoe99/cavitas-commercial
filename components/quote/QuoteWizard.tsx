@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { parsePostalCode } from '../../lib/postalCode';
 import { SITE_PHONE_DISPLAY } from '../../seo';
 import {
   EMPTY_QUOTE,
@@ -43,7 +45,8 @@ function validateStep(step: QuoteStepId, answers: QuoteAnswers): Errors {
     if (!answers.address.trim()) errors.address = 'Enter the street address.';
     if (!answers.city.trim()) errors.city = 'Enter your city.';
     if (!answers.state) errors.state = 'Select a state.';
-    if (!answers.zip.trim() || answers.zip.trim().length < 3) errors.zip = 'Enter a valid ZIP.';
+    const postal = parsePostalCode(answers.zip);
+    if (!postal.ok) errors.zip = postal.error;
   }
 
   if (step === 'schedule') {
@@ -69,9 +72,17 @@ function validateStep(step: QuoteStepId, answers: QuoteAnswers): Errors {
   return errors;
 }
 
+function initialAnswersFromParams(searchParams: URLSearchParams): QuoteAnswers {
+  const raw = searchParams.get('zip')?.trim() ?? '';
+  if (!raw) return EMPTY_QUOTE;
+  const parsed = parsePostalCode(raw);
+  return { ...EMPTY_QUOTE, zip: parsed.ok ? parsed.formatted : raw };
+}
+
 export const QuoteWizard: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [stepIndex, setStepIndex] = useState(0);
-  const [answers, setAnswers] = useState<QuoteAnswers>(EMPTY_QUOTE);
+  const [answers, setAnswers] = useState<QuoteAnswers>(() => initialAnswersFromParams(searchParams));
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -79,6 +90,14 @@ export const QuoteWizard: React.FC = () => {
   const isFirst = stepIndex === 0;
   const isLast = stepIndex === QUOTE_STEPS.length - 1;
   const progress = ((stepIndex + 1) / QUOTE_STEPS.length) * 100;
+
+  useEffect(() => {
+    const raw = searchParams.get('zip')?.trim();
+    if (!raw) return;
+    const parsed = parsePostalCode(raw);
+    const zip = parsed.ok ? parsed.formatted : raw;
+    setAnswers((prev) => (prev.zip === zip ? prev : { ...prev, zip }));
+  }, [searchParams]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -279,6 +279,55 @@
         50% { transform: translateX(2px) rotate(0.6deg); }
       }
 
+      @keyframes zipCheckSpin {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes zipCheckRing {
+        0%, 100% { transform: scale(1); opacity: 0.55; }
+        50% { transform: scale(1.08); opacity: 1; }
+      }
+      @keyframes zipCheckBar {
+        from { width: 0%; }
+        to { width: 100%; }
+      }
+      @keyframes zipCheckPop {
+        from { transform: scale(0.7); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+      @keyframes zipCheckPanelIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .zip-check-spin {
+        animation: zipCheckSpin 0.9s linear infinite;
+      }
+      .zip-check-ring {
+        animation: zipCheckRing 1.6s ease-in-out infinite;
+      }
+      .zip-check-bar {
+        animation: zipCheckBar 1.5s linear forwards;
+      }
+      .zip-check-pop {
+        animation: zipCheckPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      .zip-check-panel {
+        animation: zipCheckPanelIn 0.3s ease-out both;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .zip-check-spin,
+        .zip-check-ring,
+        .zip-check-bar,
+        .zip-check-pop,
+        .zip-check-panel {
+          animation: none !important;
+        }
+        .zip-check-bar {
+          width: 100%;
+        }
+      }
+
       .hero-gloss {
         stroke-dasharray: 420;
         stroke-dashoffset: 420;
