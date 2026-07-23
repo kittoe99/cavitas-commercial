@@ -26,7 +26,7 @@ export const ZipFinder: React.FC = () => {
     if (phase !== 'idle') return;
 
     const parsed = parsePostalCode(zip);
-    if (!parsed.ok) {
+    if (parsed.ok === false) {
       setError(parsed.error);
       return;
     }

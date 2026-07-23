@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { parsePostalCode } from '../../lib/postalCode';
+import { submitQuoteRequest } from '../../lib/submissions';
 import { SITE_PHONE_DISPLAY } from '../../seo';
 import {
   EMPTY_QUOTE,
@@ -46,7 +47,7 @@ function validateStep(step: QuoteStepId, answers: QuoteAnswers): Errors {
     if (!answers.city.trim()) errors.city = 'Enter your city.';
     if (!answers.state) errors.state = 'Select a state.';
     const postal = parsePostalCode(answers.zip);
-    if (!postal.ok) errors.zip = postal.error;
+    if (postal.ok === false) errors.zip = postal.error;
   }
 
   if (step === 'schedule') {
@@ -85,6 +86,8 @@ export const QuoteWizard: React.FC = () => {
   const [answers, setAnswers] = useState<QuoteAnswers>(() => initialAnswersFromParams(searchParams));
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const step = QUOTE_STEPS[stepIndex];
   const isFirst = stepIndex === 0;
@@ -119,8 +122,18 @@ export const QuoteWizard: React.FC = () => {
     setStepIndex((i) => Math.max(i - 1, 0));
   };
 
-  const submit = () => {
-    setSubmitted(true);
+  const submit = async () => {
+    if (submitting) return;
+    setSubmitError('');
+    setSubmitting(true);
+    try {
+      await submitQuoteRequest(answers);
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Could not submit your quote. Please try again or call us.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -232,13 +245,21 @@ export const QuoteWizard: React.FC = () => {
           Back
         </button>
         {isLast ? (
-          <button
-            type="button"
-            onClick={submit}
-            className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-[#f5f5f5] hover:bg-secondary-700 transition-colors"
-          >
-            Submit quote request
-          </button>
+          <div className="flex flex-col items-end gap-2">
+            {submitError && (
+              <p className="text-sm font-semibold text-secondary text-right max-w-sm" role="alert">
+                {submitError}
+              </p>
+            )}
+            <button
+              type="button"
+              onClick={submit}
+              disabled={submitting}
+              className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-[#f5f5f5] hover:bg-secondary-700 transition-colors disabled:opacity-70 disabled:cursor-wait"
+            >
+              {submitting ? 'Submitting…' : 'Submit quote request'}
+            </button>
+          </div>
         ) : (
           <button
             type="button"

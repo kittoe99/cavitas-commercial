@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocalMarkets } from '../hooks/useDetectedCity';
+import { submitContactMessage } from '../lib/submissions';
 import { SITE_PHONE_DISPLAY } from '../seo';
 
 const PHONE_TEL = '8336931311';
@@ -29,6 +30,8 @@ export const ContactPage: React.FC = () => {
   const [form, setForm] = useState<FormState>(EMPTY);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const patch = (key: keyof FormState, value: string) => {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -49,13 +52,32 @@ export const ContactPage: React.FC = () => {
     return next;
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const next = validate();
     setErrors(next);
     if (Object.keys(next).length) return;
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (submitting) return;
+
+    setSubmitError('');
+    setSubmitting(true);
+    try {
+      await submitContactMessage({
+        name: form.name,
+        business: form.business,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      });
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error ? err.message : 'Could not send your message. Please try again or call us.',
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -255,11 +277,18 @@ export const ContactPage: React.FC = () => {
                       {errors.message && <p className="mt-1.5 text-sm text-secondary">{errors.message}</p>}
                     </label>
 
+                    {submitError && (
+                      <p className="text-sm font-semibold text-secondary" role="alert">
+                        {submitError}
+                      </p>
+                    )}
+
                     <button
                       type="submit"
-                      className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-secondary px-7 py-3.5 text-sm font-semibold text-[#f5f5f5] hover:bg-secondary-700 transition-colors"
+                      disabled={submitting}
+                      className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-secondary px-7 py-3.5 text-sm font-semibold text-[#f5f5f5] hover:bg-secondary-700 transition-colors disabled:opacity-70 disabled:cursor-wait"
                     >
-                      Send message
+                      {submitting ? 'Sending…' : 'Send message'}
                     </button>
                   </form>
                 </>
