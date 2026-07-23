@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { useLocalMarkets } from '../hooks/useDetectedCity';
 import { SITE_PHONE_DISPLAY } from '../seo';
@@ -6,10 +7,8 @@ import { SITE_PHONE_DISPLAY } from '../seo';
 const PHONE_TEL = '2067462523';
 
 const policies = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
-  { label: 'Disclaimer', href: '#' },
-  { label: 'Cookie Policy', href: '#' },
+  { label: 'Privacy Policy', to: '/privacy' },
+  { label: 'Terms of Service', to: '/terms' },
 ];
 
 const IconPhone = () => (
@@ -138,13 +137,13 @@ export const Footer: React.FC = () => {
           <div className="absolute left-0 right-0 top-1/2 h-px bg-secondary" aria-hidden />
           <div className="relative flex flex-wrap items-center justify-start gap-3 sm:gap-4">
             {policies.map((p) => (
-              <a
+              <Link
                 key={p.label}
-                href={p.href}
+                to={p.to}
                 className="rounded-sm bg-white px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-bold text-[#111] hover:bg-[#f3f3f3] transition-colors"
               >
                 {p.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

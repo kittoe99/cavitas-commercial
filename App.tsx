@@ -16,6 +16,8 @@ import { FloorCarePage } from './components/FloorCarePage';
 import { QuotePage } from './components/QuotePage';
 import { ContactPage } from './components/ContactPage';
 import { PricingLandingPage } from './components/PricingLandingPage';
+import { TermsPage } from './components/TermsPage';
+import { PrivacyPage } from './components/PrivacyPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -60,6 +62,8 @@ function AppShell() {
           <Route path="/pricing" element={<PricingLandingPage />} />
           <Route path="/quote" element={<QuotePage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/services/office-cleaning" element={<OfficeCleaningPage />} />
           <Route path="/services/janitorial" element={<JanitorialPage />} />
           <Route path="/services/floor-care" element={<FloorCarePage />} />

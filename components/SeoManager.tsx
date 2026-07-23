@@ -5,9 +5,11 @@ import {
   DEFAULT_OG_IMAGE,
   HOME_SEO,
   PRICING_SEO,
+  PRIVACY_SEO,
   QUOTE_SEO,
   SERVICE_SEO,
   SITE_NAME,
+  TERMS_SEO,
   absoluteUrl,
   organizationSchema,
   type PageSeo,
@@ -89,6 +91,16 @@ export function SeoManager() {
 
     if (pathname === '/contact') {
       applySeo(CONTACT_SEO);
+      return;
+    }
+
+    if (pathname === '/terms') {
+      applySeo(TERMS_SEO);
+      return;
+    }
+
+    if (pathname === '/privacy') {
+      applySeo(PRIVACY_SEO);
       return;
     }
 

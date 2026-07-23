@@ -62,6 +62,20 @@ export const PRICING_SEO: PageSeo = {
     'See what commercial cleaning costs for your space. Get a free instant monthly estimate for office cleaning, janitorial, and floor care—matched providers through Cavitas.',
 };
 
+export const TERMS_SEO: PageSeo = {
+  path: '/terms',
+  title: 'Terms of Service | Cavitas Commercial Cleaning',
+  description:
+    'Terms of Service for Cavitas Commercial Cleaning—how our matching platform, quotes, and website work for commercial cleaning customers.',
+};
+
+export const PRIVACY_SEO: PageSeo = {
+  path: '/privacy',
+  title: 'Privacy Policy | Cavitas Commercial Cleaning',
+  description:
+    'Privacy Policy for Cavitas Commercial Cleaning—how we collect, use, and share information from quotes, contact forms, and our website.',
+};
+
 export function absoluteUrl(path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${SITE_URL}${normalized === '/' ? '' : normalized}`;
