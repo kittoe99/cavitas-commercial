@@ -117,8 +117,8 @@ export const ZipFinder: React.FC = () => {
 
               <p className="text-sm font-bold text-[#d4d4d4]">
                 Call us at{' '}
-                <a href="tel:8336931311" className="text-secondary hover:underline">
-                  (833) 693-1311
+                <a href="tel:2067462523" className="text-secondary hover:underline">
+                  (206) 746-2523
                 </a>
                 {' '}or{' '}
                 <a href="/quote" className="text-secondary hover:underline">

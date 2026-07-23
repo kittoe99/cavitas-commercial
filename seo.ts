@@ -2,8 +2,8 @@
 export const SITE_URL = 'https://www.cavitascommercialcleaning.com';
 export const SITE_NAME = 'Cavitas Commercial Cleaning';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/cavitas-commercial-cleaners.png`;
-export const SITE_PHONE = '+18336931311';
-export const SITE_PHONE_DISPLAY = '(833) 693-1311';
+export const SITE_PHONE = '+12067462523';
+export const SITE_PHONE_DISPLAY = '(206) 746-2523';
 
 export type PageSeo = {
   title: string;
@@ -52,7 +52,7 @@ export const CONTACT_SEO: PageSeo = {
   path: '/contact',
   title: 'Contact Cavitas Commercial Cleaning',
   description:
-    'Contact Cavitas Commercial Cleaning 24/7. Call (833) 693-1311 or send a message—we connect businesses with independent commercial cleaning providers.',
+    'Contact Cavitas Commercial Cleaning 24/7. Call (206) 746-2523 or send a message—we connect businesses with independent commercial cleaning providers.',
 };
 
 export function absoluteUrl(path: string): string {

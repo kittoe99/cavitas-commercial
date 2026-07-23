@@ -61,7 +61,7 @@ export const ContactStep: React.FC<Props> = ({ answers, onChange, errors }) => (
           className={inputClass}
           value={answers.phone}
           onChange={(e) => onChange({ phone: e.target.value })}
-          placeholder="(833) 693-1311"
+          placeholder="(206) 746-2523"
           autoComplete="tel"
         />
         <ErrorText>{errors.phone}</ErrorText>

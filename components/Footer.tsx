@@ -3,7 +3,7 @@ import { Logo } from './Logo';
 import { useLocalMarkets } from '../hooks/useDetectedCity';
 import { SITE_PHONE_DISPLAY } from '../seo';
 
-const PHONE_TEL = '8336931311';
+const PHONE_TEL = '2067462523';
 
 const policies = [
   { label: 'Privacy Policy', href: '#' },

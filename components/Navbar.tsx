@@ -3,8 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
 import { useDetectedCity } from '../hooks/useDetectedCity';
 
-const SITE_PHONE = '(833) 693-1311';
-const SITE_PHONE_TEL = '8336931311';
+const SITE_PHONE = '(206) 746-2523';
+const SITE_PHONE_TEL = '2067462523';
 
 const serviceItems = [
   { name: 'Office Cleaning', path: '/services/office-cleaning' },
