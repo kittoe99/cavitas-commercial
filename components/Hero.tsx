@@ -7,8 +7,8 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 flex h-full items-center px-4 sm:px-8 lg:px-14 xl:px-20 pt-7 pb-8 sm:pt-10 sm:pb-10 md:py-12">
         <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.9fr)] items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 animate-slide-up">
           <div className="relative z-10 max-w-xl md:max-w-none md:pr-2">
-            <h1 className="font-serif text-[1.45rem] sm:text-[2.15rem] md:text-[2.5rem] leading-[1.15] tracking-tight text-[var(--text)] mb-2.5 sm:mb-4 animate-fade-in-up">
-              Commercial cleaning providers, matched to your business.
+            <h1 className="font-sans font-extrabold text-[1.5rem] sm:text-[2.25rem] md:text-[2.65rem] leading-[1.12] tracking-tight text-white mb-2.5 sm:mb-4 animate-fade-in-up">
+              The right cleaners for your commercial space.
             </h1>
             <p className="text-[13px] sm:text-base leading-relaxed text-[var(--text-muted)] mb-5 sm:mb-7 max-w-md animate-fade-in-up delay-200">
               We connect businesses with independent service providers for office cleaning, janitorial programs, and floor care across the metro area.
