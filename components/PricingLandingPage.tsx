@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { estimateQuote, formatMoney, type QuoteEstimate } from './quote/quotePricing';
 import {
@@ -7,6 +7,7 @@ import {
   type QuoteAnswers,
   type ServiceType,
 } from './quote/quoteTypes';
+import { trackPricingPageViewConversion } from '../lib/gtag';
 import { normalizePostalInput, parsePostalCode } from '../lib/postalCode';
 import { submitAdsPricingLead } from '../lib/submissions';
 import { SITE_PHONE, SITE_PHONE_DISPLAY } from '../seo';
@@ -88,6 +89,10 @@ export const PricingLandingPage: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [estimate, setEstimate] = useState<QuoteEstimate | null>(null);
+
+  useEffect(() => {
+    trackPricingPageViewConversion();
+  }, []);
 
   const selectValue = customSqft
     ? SQFT_CUSTOM
