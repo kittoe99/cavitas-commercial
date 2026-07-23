@@ -170,7 +170,7 @@ export const PricingLandingPage: React.FC = () => {
                 Free commercial pricing
               </p>
               <h1 className="font-sans font-extrabold text-[1.65rem] sm:text-[2.35rem] md:text-[2.75rem] leading-[1.1] tracking-tight text-white mb-3 sm:mb-4 max-w-xl">
-                See what commercial cleaning costs for your space.
+                Get your commercial cleaning price in under a minute.
               </h1>
               <p className="text-[14px] sm:text-base text-[var(--text-muted)] leading-relaxed max-w-md mb-6">
                 Enter a few details for an instant monthly range. No commitment—just clear pricing so you can move forward.
