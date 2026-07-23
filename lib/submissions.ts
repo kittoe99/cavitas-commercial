@@ -73,3 +73,51 @@ export async function submitContactMessage(form: ContactSubmission): Promise<voi
 
   if (error) throw new Error(error.message);
 }
+
+/** Short Google Ads /pricing lead — same table, tagged source. */
+export async function submitAdsPricingLead(
+  answers: QuoteAnswers,
+  estimate: NonNullable<ReturnType<typeof estimateQuote>>,
+): Promise<void> {
+  if (!isSupabaseConfigured) {
+    throw new Error('Submissions are temporarily unavailable. Please call us instead.');
+  }
+
+  const sqft = parseSqft(answers.sqft);
+
+  const { error } = await getSupabase().from('cavitas_quote_requests').insert({
+    status: 'new',
+    service: answers.service || null,
+    industry: answers.industry || null,
+    frequency: answers.frequency || null,
+    sqft,
+    occupants: answers.occupants || null,
+    restrooms: answers.restrooms || null,
+    floors: answers.floors || null,
+    address: answers.address.trim() || null,
+    city: answers.city.trim() || null,
+    state: answers.state || null,
+    zip: answers.zip.trim() || null,
+    name: answers.name.trim(),
+    business_name: answers.businessName.trim() || null,
+    email: answers.email.trim(),
+    phone: answers.phone.trim(),
+    contact_pref: answers.contactPref || null,
+    budget: answers.budget || null,
+    notes: answers.notes.trim() || null,
+    areas: answers.areas,
+    addons: answers.addons,
+    preferred_days: answers.preferredDays,
+    time_window: answers.timeWindow || null,
+    start_timeframe: answers.startTimeframe || null,
+    access_type: answers.access || null,
+    supplies: answers.supplies || null,
+    estimate_low: estimate.low,
+    estimate_high: estimate.high,
+    estimate_label: estimate.label,
+    answers,
+    source: 'cavitas-ads-pricing',
+  });
+
+  if (error) throw new Error(error.message);
+}

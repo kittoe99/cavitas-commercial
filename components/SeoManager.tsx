@@ -4,6 +4,7 @@ import {
   CONTACT_SEO,
   DEFAULT_OG_IMAGE,
   HOME_SEO,
+  PRICING_SEO,
   QUOTE_SEO,
   SERVICE_SEO,
   SITE_NAME,
@@ -78,6 +79,11 @@ export function SeoManager() {
 
     if (pathname === '/quote') {
       applySeo(QUOTE_SEO);
+      return;
+    }
+
+    if (pathname === '/pricing') {
+      applySeo(PRICING_SEO);
       return;
     }
 

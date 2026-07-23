@@ -65,7 +65,7 @@ export const HeroTrustBar: React.FC = () => {
             {b.icon}
             <div className="min-w-0">
               <p className="text-[10px] sm:text-xs font-bold text-[var(--text)] tracking-tight leading-tight">{b.title}</p>
-              <p className="hidden sm:block text-[11px] text-[var(--text-muted)] leading-snug">{b.sub}</p>
+              <p className="text-[9px] sm:text-[11px] text-[var(--text-muted)] leading-snug">{b.sub}</p>
             </div>
           </div>
         ))}

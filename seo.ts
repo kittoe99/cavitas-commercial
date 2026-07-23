@@ -55,6 +55,13 @@ export const CONTACT_SEO: PageSeo = {
     'Contact Cavitas Commercial Cleaning 24/7. Call (206) 746-2523 or send a message—we connect businesses with independent commercial cleaning providers.',
 };
 
+export const PRICING_SEO: PageSeo = {
+  path: '/pricing',
+  title: 'Commercial Cleaning Pricing | Free Instant Estimate | Cavitas',
+  description:
+    'See what commercial cleaning costs for your space. Get a free instant monthly estimate for office cleaning, janitorial, and floor care—matched providers through Cavitas.',
+};
+
 export function absoluteUrl(path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${SITE_URL}${normalized === '/' ? '' : normalized}`;
