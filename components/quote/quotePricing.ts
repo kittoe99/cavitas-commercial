@@ -84,37 +84,36 @@ function roundTo(n: number, step = 5): number {
 
 /**
  * Organization / facility scale: small shops stay nearer baseline;
- * mid and large commercial accounts get a clear premium.
- * Returns multipliers for [low, high] sides (high pushed harder).
+ * mid and large commercial accounts get a clear premium on the low end.
+ * High-side bias is kept modest — final range is capped vs low.
  */
 function orgScale(sqft: number, occupants: OccupantBand | ''): { low: number; high: number } {
   let low = 1;
-  let high = 1.08; // slight high-side bias even for small jobs
+  let high = 1.05;
 
   if (sqft >= 2500) {
     low = 1.06;
-    high = 1.14;
+    high = 1.1;
   }
   if (sqft >= 5000) {
     low = 1.12;
-    high = 1.22;
+    high = 1.16;
   }
   if (sqft >= 10000) {
     low = 1.2;
-    high = 1.34;
+    high = 1.24;
   }
   if (sqft >= 25000) {
     low = 1.28;
-    high = 1.45;
+    high = 1.32;
   }
 
-  // Large headcount without huge sq ft still signals a bigger org
   if (occupants === '51-100') {
     low *= 1.06;
-    high *= 1.1;
+    high *= 1.08;
   } else if (occupants === '100-plus') {
     low *= 1.12;
-    high *= 1.18;
+    high *= 1.14;
   }
 
   return { low, high };
@@ -158,14 +157,14 @@ export function estimateQuote(answers: QuoteAnswers): QuoteEstimate | null {
   const floors = Math.min(Math.max(Number(answers.floors) || 1, 1), 30);
   const layoutAdd = restrooms * 65 + Math.max(floors - 1, 0) * 85;
   low += layoutAdd * 0.95;
-  high += layoutAdd * 1.25;
+  high += layoutAdd * 1.05;
 
   const addonPct = answers.addons
     .filter((a) => a !== 'none')
     .reduce((sum, id) => sum + (ADDON_PCT[id] ?? 0), 0);
   if (addonPct > 0) {
     low *= 1 + addonPct * 0.95;
-    high *= 1 + addonPct * 1.1;
+    high *= 1 + addonPct;
   }
 
   low *= occupantBoost * freqScale * scale.low;
@@ -183,7 +182,16 @@ export function estimateQuote(answers: QuoteAnswers): QuoteEstimate | null {
   }
 
   low = Math.max(low, minLow);
-  high = Math.max(high, low * 1.35);
+  // Keep the low end; tighten the high end (~25–33% above low, e.g. $2,400–$3,200)
+  const highFloor = low * 1.25;
+  const highCap = low * 1.33;
+  high = Math.min(Math.max(high, highFloor), highCap);
+
+  // Sub-$400 quotes get a $79 bump on the total (e.g. $300 → $379)
+  if (low <= 399) {
+    low += 79;
+    high += 79;
+  }
 
   const isRecurring = !isOneTime;
   const rateLabel = `$${facility.low.toFixed(2)}–$${facility.high.toFixed(2)}/sq ft`;
